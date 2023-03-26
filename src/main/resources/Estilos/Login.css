@@ -1,0 +1,208 @@
+/*
+Boolean: Cuando su valor sea boolean, significa true o false
+Size: Cuando es Size se refiere a un numero entero del 1 - 9
+-fx-font-family: serif (Times), sans-serif(Helvetica)..etc  --> Para determinar el tipo de letra es decir, la fuente con la que se va a trabajar
+-fx-font-style:[ normal | italic | oblique ] --> Se refiere normal o cursiva
+-fx-font-size: --> Se refiere al tamaño de la letra
+-fx-text-fill: --> Se refiere al color de la letra
+-fx-background-color: --> Se refiere al color de fondo
+-fx-border-style:  --> Se refiere al estilo del borde, puede ser punteado o solido entre otros
+-fx-border-width: -->5px Se refiere al ancho de la linea de los bordes
+-fx-border-color: -->5px Se refiere al color del borde que se le de a algo
+-fx-background-radius: 10 10 10 10; --> Se refiere al establecimiento del color de fondo de un borde o
+redondeado de las 4 esquinas de algo
+-fx-border-radius: 10 10 10 10; --> Se refiere a cuanto se redondean los dordes de algo
+Button:hover {-fx-background-color: #333333;} --> Se usa para cambiar de fondo cuando se pasa el
+cursor por un boton por ejemplo
+
+El siguiente, se usa para cuando se presiona un boton cambie de color
+Button:pressed { -fx-background-color: #FFFFFF;
+-fx-text-fill: #000000;}
+-fx-font-weight: bold; Sirve para que la letra sea negrilla
+-fx-text-alignment: left, center, right, justify --> Sirve para alinear el texto
+-fx-alignment:top-left, top-center, top-right, center-left, center, center-right,
+    bottom-left,, bottom-center, bottom-right, baseline-left, baseline-center,
+    baseline-right --> sirve para alinear el objeto
+-fx-cursor:hand;  --> Para que el cursor tome forma de mano
+
+.Shadow {-fx-effect: dropshadow(three-pass-box, rgb(0,0,0,0.7), 5,0,0,0);} Para poner sombra
+-fx-background-color: linear-gradient(to right, #720e28,#ab0934); Para poner desde la derecha dos colores radientes
+en vez de to right tambien puede ir to bottom right
+-fx-cursor:hand es para poner el cursor en forma de mano
+-fx-padding: 0px 0px 0px 28px;
+.xxxx:focused{} Es para cuando el cursor se ubique en el elemento
+.table-View{
+    -fx-border-color: linear-gradient(to right, #720e28,#ab0934); Para poner desde la derecha dos colores radientes
+    -fx-border-width: 2px; ancho del borde
+    -fx-padding:0px;
+    -fx-border-radius: 4px;
+    -fx-background-color: transparent
+    }
+    .table-View.table-column{
+    -fx-alignment: CENTER;
+    }
+    .table-View.column-header-background{
+    -fx-background-color: linear-gradient(to right, #720e28,#ab0934); Para poner desde la derecha dos colores radientes
+    -fx-background-radius: 8px 8px 0px 0px
+    -fx-background-insets: 0 0 0 0
+    }
+    .table-View .column-header, .filter{
+    -fx-background-color: transparent
+    -fx-size:40px
+    }
+    .table-View .column-header .label{
+    -fx-text-fill:#fff;
+Ejemplo: En el sifuiente código, el Desing-ButtonInicio es la clase y
+va en el campo Propierties: Style Class en el Scene Builder
+.Desing-ButtonInicio{
+        -fx-background-color:Transparent;
+        -fx-border-color:#FFFFFF;
+        -fx-border-radius:5px;
+        -fx-background-radius:5px;
+}
+Con el siguiente codigo se establece que pasa cuando se pasa el mouse por encima del ButtonInicio y cuando se presiona
+    .Desing-ButtonInicio:hover{
+            -fx-background-color:#FFFFFF;
+    }
+    .Desing-ButtonInicio:pressed{
+    -fx-background-color:red;
+    }
+    dropshadow( <blur-type> , <color> , <number> , <number> , <number> , <number> )
+
+    <blur-type> (Tipo de desenfoque) = [ gaussian | one-pass-box | three-pass-box | two-pass-box ]
+    <color>El Color de sombra.
+    <número>El radio del núcleo de desenfoque de sombra. En el rango [0,0 ... 127.0], Valor típico 10.
+    <número>La propagación de la sombra. La extensión es la porción del radio donde La contribución del material de origen será del 100%. El resto Parte del radio tendrá una contribución controlada por el desenfoque núcleo. Una extensión de 0.0 dará como resultado una distribución de la sombra determinado completamente por el algoritmo de desenfoque. Un spread de 1.0 resultará en un crecimiento sólido hacia el exterior de la opacidad del material de origen hasta el límite de la radio con un corte muy agudo a la transparencia en el radio. Valores debe estar en el rango [0.0 ... 1.0].
+    <número>El desplazamiento de la sombra en la dirección x, en píxeles.
+    <número>El desplazamiento de la sombra en la dirección y, en píxeles
+
+    Tambien aplica para sombra interior
+    innershadow( <blur-type> , <color> , <number> , <number> , <number> , <number> )
+
+    <blur-type> = [ gaussian | one-pass-box | three-pass-box | two-pass-box ]
+*/
+
+.Login-SombraPanelSuperior {
+    /*-fx-effect:dropshadow(three-pass-box, rgb(0,0,0,0.5), 0,0,0,0);*/
+    -fx-effect:dropshadow(three-pass-box, RGB(0,0,0,0.9), 15px,0.10px,0px,0px);
+    /*-fx-effect-dropshadow:1px 1px 1px 1px rgba(32,32,32,0.3);*/
+}
+.Login-SombraPanelIzquierdo {
+    /*-fx-effect:dropshadow(three-pass-box, rgb(0,0,0,0.5), 0,0,0,0);*/
+    -fx-effect:dropshadow(three-pass-box, RGB(0,0,0,0.9), 15px,0.10px,2px,0px);
+    /*-fx-effect-dropshadow:1px 1px 1px 1px rgba(32,32,32,0.3);*/
+}
+.Login-Sombra-BtnLogin {
+    /*-fx-effect:dropshadow(three-pass-box, rgb(0,0,0,0.5), 0,0,0,0);*/
+    -fx-effect:dropshadow(three-pass-box, RGB(0,0,0,0.9), 15px,0.10px,2px,0px);
+    /*-fx-effect-dropshadow:1px 1px 1px 1px rgba(32,32,32,0.3);*/
+}
+
+
+.Login-PanelContenedor{
+    /*-fx-background-color:Transparent;*/
+    -fx-border-radius: 5px 5px 5px 5px;
+    -fx-background-radius: 5px 5px 5px 5px;
+}
+
+.Login-PanelSuperior{
+    /*-fx-background-color: linear-gradient(to left, #720e28,#ab0934);*/
+    -fx-background-color: linear-gradient(to left  , #008b8b, #007e99, #006fa7 , #005cad, #0042a4, #0149af, #0151bb, #0058c6, #0086e9, #00b1fb, #00d9ff, #00ffff);
+    -fx-border-radius: 5px 5px 8px 0px;
+    -fx-background-radius: 5px 5px 8px 0px;
+    -fx-border-width:.0px 0px .0px .4px;
+    /*-fx-background-insets: 0 0 0 0;*/
+}
+.Login-PanelIzquierda{
+    /*-fx-background-color: linear-gradient(to right, #720e28,#ab0934);*/
+    -fx-background-color: linear-gradient(to right, #008b8b, #007e99, #006fa7 0%,   #0086e9, #00b1fb, #00d9ff, #00ffff);
+    -fx-border-radius:5px 0px 0px 5px;
+    -fx-background-radius:5px 0px 8px 4px;
+    -fx-border-width:.0px 0px 0px .4px;
+    /*-fx-background-insets: 0 0 0 0;*/
+}
+
+.Login-TituloModulo{
+    -fx-font-family:Tahoma;
+    -fx-font-size:50px;
+    -fx-text-fill:linear-gradient(to right top, #ffffff 90%, #bbbbbb);
+    -fx-font-weight: bold;
+    -fx-alignment: center-right;
+}
+.Login-SubTituloModulo{
+    -fx-font-family:Tahoma;
+    -fx-font-size:12px;
+    -fx-text-fill: linear-gradient(to right top, #ffffff 50%, #dcdcdc);
+    -fx-font-weight: bold;
+    -fx-alignment:center-right;
+}
+.Login-Btn-Cerrar{
+    -fx-background-color:Transparent;
+    -fx-background-radius:15px 15px 15px 15px;
+    -fx-border-width: 0px 0px 0px 0px;
+}
+    .Login-Btn-Cerrar:hover{
+        -fx-background-color:linear-gradient(to right top, #ff0000, #ff003c, #ff0064, #f60088, #de11a9);
+        -fx-border-width: .0px .0px .0px .0px;
+        -fx-border-color:linear-gradient(to right top, #ff0000, #ff003c, #ff0064, #f60088, #de11a9);
+    }
+
+.Login-Btn-Login{
+    -fx-background-color:linear-gradient(to right, #720e28,#ab0934);
+    -fx-font-family:Tahoma;
+    -fx-font-size:12px;
+    -fx-text-fill:#fff;
+    -fx-font-weight: bold;
+    -fx-background-radius:8px 18px 18px 8px;
+}
+    .Login-Btn-Login:hover{
+        -fx-background-color:linear-gradient(to right, #0f3443, #34e89e);
+        -fx-effect:dropshadow(three-pass-box, RGB(0,0,0,0.9), 15px,0.10px,2px,0px);
+
+    }
+.Login-Label{
+    -fx-font-family:Tahoma;
+    -fx-font-size:12px;
+    -fx-text-fill:#000;
+    -fx-font-weight: bold;
+}
+.Login-TextField-User{
+    -fx-background-color:#d3d3d3;
+    -fx-font-family:Tahoma;
+    -fx-font-size:12px;
+    -fx-background-radius:8px 8px 18px 4px;
+    -fx-border-width:.0px 0px 0px .0px;
+}
+    .Login-TextField-User:hover{
+        -fx-background-color:linear-gradient(to right, #514345, #232526);
+    }
+    .Login-TextField-User:focused{
+        -fx-background-color:#b2b2b2;
+    }
+.Login-TextField-Pass{
+    -fx-background-color:#d3d3d3;
+    -fx-font-family:Tahoma;
+    -fx-font-size:12px;
+    -fx-background-radius:8px 8px 18px 4px;
+    -fx-border-width:.0px 0px .0px .0px;
+}
+    .Login-TextField-Pass:hover{
+        -fx-background-color:linear-gradient(to right, #514345, #232526);
+    }
+    .Login-TextField-Pass:focused{
+        -fx-background-color:#b2b2b2;
+    }
+.Login-LabelMarca{
+    -fx-font-family:Tahoma;
+    -fx-font-size:12px;
+    -fx-text-fill:#fff;
+    -fx-font-weight: bold;
+}
+
+.label-mensaje{
+    -fx-font-family:Tahoma;
+    -fx-font-size:32px;
+    -fx-font-weight: bold;
+    -fx-border-radius:8px 8px 8px 8px;
+    -fx-background-radius:8px 8px 8px 8px;
+}

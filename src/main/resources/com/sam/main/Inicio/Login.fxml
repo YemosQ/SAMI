@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="panelLogin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" styleClass="Login-PanelContenedor" stylesheets="@../../../../Estilos/Login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Login.LoginC">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="200.0" prefWidth="1200.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <Label styleClass="Login-TituloModulo" text="SAMI - NÓMINA" />
+                        <Label styleClass="Login-SubTituloModulo" text="Sistema Para la Administración Médica Integral" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="32.0" prefWidth="64.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+               <children>
+                  <Button cancelButton="true" graphicTextGap="0.0" maxWidth="-Infinity" minWidth="39.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="39.0" styleClass="Login-Btn-Cerrar">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Iconos/icons8_multiplyclose1_64.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <styleClass>
+            <String fx:value="Login-PanelSuperior" />
+            <String fx:value="Login-SombraPanelSuperior" />
+         </styleClass>
+      </AnchorPane>
+      <AnchorPane layoutX="14.0" layoutY="200.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="96.0" fitWidth="289.0" pickOnBounds="true" smooth="false">
+                           <image>
+                              <Image url="@../../../../Imagenes/logo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <Label layoutX="89.0" layoutY="671.0" styleClass="Login-LabelMarca" text="\@YemosQ.Inc" />
+         </children>
+         <styleClass>
+            <String fx:value="Login-PanelIzquierda" />
+            <String fx:value="Login-SombraPanelIzquierdo" />
+         </styleClass>
+      </AnchorPane>
+      <VBox alignment="CENTER_RIGHT" layoutX="843.0" layoutY="535.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="52.0" prefWidth="240.0" spacing="10.0">
+         <children>
+            <HBox alignment="BOTTOM_RIGHT" spacing="15.0">
+               <children>
+                  <Label styleClass="Login-Label" text="Usuario" />
+                  <TextField fx:id="user" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="140.0" styleClass="Login-TextField-User" />
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_RIGHT" spacing="15.0">
+               <children>
+                  <Label styleClass="Login-Label" text="Contraseña" />
+                  <PasswordField fx:id="pass" maxWidth="-Infinity" minWidth="-Infinity" onAction="#login" prefWidth="140.0" styleClass="Login-TextField-Pass" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" layoutX="937.0" layoutY="626.0" spacing="30.0">
+         <children>
+            <Button fx:id="btn_Login" graphicTextGap="0.0" mnemonicParsing="false" onAction="#login" prefHeight="43.0" prefWidth="169.0" styleClass="Login-Btn-Login" text="Iniciar Sesión">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../Iconos/icons8_done_64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <Label fx:id="label_conexion" alignment="CENTER" layoutX="496.0" layoutY="276.0" prefHeight="172.0" prefWidth="357.0" styleClass="label-mensaje" textAlignment="CENTER" wrapText="true" />
+   </children>
+</AnchorPane>

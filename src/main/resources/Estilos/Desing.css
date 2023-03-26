@@ -1,0 +1,74 @@
+/*
+Boolean: Cuando su valor sea boolean, significa true o false
+Size: Cuando es Size se refiere a un numero entero del 1 - 9
+-fx-font-family: serif (Times), sans-serif(Helvetica)..etc  --> Para determinar el tipo de letra es decir, la fuente con la que se va a trabajar
+-fx-font-style:[ normal | italic | oblique ] --> Se refiere normal o cursiva
+-fx-font-size: --> Se refiere al tamaño de la letra
+-fx-text-fill: --> Se refiere al color de la letra
+-fx-background-color: --> Se refiere al color de fondo
+-fx-border-style:  --> Se refiere al estilo del borde, puede ser punteado o solido entre otros
+-fx-border-width: -->5px Se refiere al ancho de la linea de los bordes
+-fx-border-color: -->5px Se refiere al color del borde que se le de a algo
+-fx-background-radius: 10 10 10 10; --> Se refiere al establecimiento del color de fondo de un borde o
+redondeado de las 4 esquinas de algo
+-fx-border-radius: 10 10 10 10; --> Se refiere a cuanto se redondean los dordes de algo
+Button:hover {-fx-background-color: #333333;} --> Se usa para cambiar de fondo cuando se pasa el
+cursor por un boton por ejemplo
+
+El siguiente, se usa para cuando se presiona un boton cambie de color
+Button:pressed { -fx-background-color: #FFFFFF;
+-fx-text-fill: #000000;}
+-fx-font-weight: bold; Sirve para que la letra sea negrilla
+-fx-text-alignment: left, center, right, justify --> Sirve para alinear el texto
+-fx-alignment:top-left, top-center, top-right, center-left, center, center-right,
+    bottom-left,, bottom-center, bottom-right, baseline-left, baseline-center,
+    baseline-right --> sirve para alinear el objeto
+-fx-cursor:hand;  --> Para que el cursor tome forma de mano
+
+.Shadow {-fx-effect: dropshadow(three-pass-box, rgb(0,0,0,0.7), 5,0,0,0);} Para poner sombra
+-fx-background-color: linear-gradient(to right, #720e28,#ab0934); Para poner desde la derecha dos colores radientes
+en vez de to right tambien puede ir to bottom right
+-fx-cursor:hand es para poner el cursor en forma de mano
+-fx-padding: 0px 0px 0px 28px;
+.xxxx:focused{} Es para cuando el cursor se ubique en el elemento
+
+.table-View{
+    -fx-border-color: linear-gradient(to right, #720e28,#ab0934); Para poner desde la derecha dos colores radientes
+    -fx-border-width: 2px; ancho del borde
+    -fx-padding:0px;
+    -fx-border-radius: 4px;
+    -fx-background-color: transparent
+    }
+    .table-View.table-column{
+    -fx-alignment: CENTER;
+    }
+    .table-View.column-header-background{
+    -fx-background-color: linear-gradient(to right, #720e28,#ab0934); Para poner desde la derecha dos colores radientes
+    -fx-background-radius: 8px 8px 0px 0px
+    -fx-background-insets: 0 0 0 0
+    }
+    .table-View .column-header, .filter{
+    -fx-background-color: transparent
+    -fx-size:40px
+    }
+    .table-View .column-header .label{
+    -fx-text-fill:#fff;
+
+
+Ejemplo: En el siguiente código, el Desing-ButtonInicio es la clase y
+va en el campo Propierties: Style Class en el Scene Builder*/
+
+.Desing-ButtonInicio{
+        -fx-background-color:Transparent;
+        -fx-border-color:#FFFFFF;
+        -fx-border-radius:5px;
+        -fx-background-radius:5px;
+}
+/*Con el siguiente codigo se establece que pasa cuando se pasa el mouse por encima del ButtonInicio y cuando se presiona*/
+    .Desing-ButtonInicio:hover{
+            -fx-background-color:#FFFFFF;
+    }
+    .Desing-ButtonInicio:pressed{
+    -fx-background-color:red;
+    }
+

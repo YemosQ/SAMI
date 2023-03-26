@@ -1,0 +1,1084 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="700.0" prefWidth="1200.0" stylesheets="@../../../../../Estilos/PanelEmergente.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Nomina.Otros.VinculacionesC">
+   <children>
+      <AnchorPane fx:id="panel_Vinculados" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1200.0">
+         <children>
+            <BorderPane prefHeight="700.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" styleClass="panelemergente" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox prefHeight="40.0" prefWidth="2236.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <AnchorPane minHeight="-Infinity" prefHeight="40.0" prefWidth="102.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="586.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../../../../Iconos/icons8_accountbarra_64.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                             <padding>
+                                                <Insets left="5.0" right="5.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane minHeight="-Infinity" prefHeight="40.0" prefWidth="1061.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="40.0" prefWidth="586.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <Label alignment="CENTER" styleClass="Parametros-TitulosMod" text="Paises, Departamentos, Ciudades y Barrios" textAlignment="CENTER" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane minHeight="-Infinity" prefHeight="40.0" prefWidth="114.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="40.0" prefWidth="120.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <Button fx:id="btn_minimizar" mnemonicParsing="false" onAction="#minimizar_Clic" styleClass="btnminimizar">
+                                                   <graphic>
+                                                      <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../../../../../Iconos/icons8_horizontal_line1_64.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="btn_Cerrar" mnemonicParsing="false" onAction="#cerrar_Clic" styleClass="btnminimizar">
+                                                   <graphic>
+                                                      <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../../../../../Iconos/icons8_multiplyclose1_64.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="680.0" prefWidth="1050.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox layoutX="-5.0" layoutY="-5.0" prefHeight="680.0" prefWidth="1050.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefHeight="680.0" prefWidth="272.0" styleClass="estiloforma">
+                                       <children>
+                                          <Label styleClass="labelgeneral" text="Grupo" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txt_idGrpT" alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="80.0" promptText="Código..." styleClass="cajaTextField" />
+                                          <Label styleClass="labelgeneral" text="Nombre Grupo" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txt_nombreGrpT" alignment="CENTER" prefHeight="25.0" prefWidth="192.0" promptText="Empresa Promotora de Salud..." styleClass="cajaTextField" VBox.vgrow="ALWAYS">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <Label styleClass="labelgeneral" text="Estado" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="cbox_EstGrpT" onKeyPressed="#llamarEstado" prefWidth="150.0" promptText="Seleccionar Estado" styleClass="combobox" />
+                                          <HBox alignment="CENTER" spacing="20.0">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" top="10.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <Button fx:id="btn_agrGrpT" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="41.0" styleClass="btnagr">
+                                                   <padding>
+                                                      <Insets left="2.0" right="2.0" />
+                                                   </padding>
+                                                   <graphic>
+                                                      <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../../../../../Iconos/icons8_plus_mathN_64.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="btn_actGrpT" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="41.0" styleClass="btnact">
+                                                   <padding>
+                                                      <Insets left="2.0" right="2.0" />
+                                                   </padding>
+                                                   <graphic>
+                                                      <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../../../../../Iconos/icons8_Refresh_64.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="btn_eliGrpT" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="41.0" styleClass="btneliminar">
+                                                   <padding>
+                                                      <Insets left="2.0" right="2.0" />
+                                                   </padding>
+                                                   <graphic>
+                                                      <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../../../../../Iconos/rojo_icons8_remove_64.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <TableView fx:id="tbl_GrupoT" prefHeight="487.0" prefWidth="153.0" styleClass="tableView" VBox.vgrow="ALWAYS">
+                                             <columns>
+                                                <TableColumn fx:id="col_idGrpT" editable="false" prefWidth="47.0" text="Código" />
+                                                <TableColumn fx:id="col_NomGrpT" editable="false" prefWidth="85.0" text="Nombre Grupo" />
+                                                <TableColumn fx:id="col_EstGrpT" editable="false" minWidth="0.0" prefWidth="72.0" resizable="false" text="Estado" />
+                                             </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                             <padding>
+                                                <Insets right="4.0" />
+                                             </padding>
+                                          </TableView>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                       </padding>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" prefHeight="680.0" prefWidth="272.0" styleClass="estiloforma">
+                                       <children>
+                                          <Label styleClass="labelgeneral" text="Riesgo ARL" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txt_idRiesgo" alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="80.0" promptText="Código" styleClass="cajaTextField" />
+                                          <HBox alignment="CENTER" spacing="30.0">
+                                             <children>
+                                                <VBox alignment="CENTER">
+                                                   <children>
+                                                      <Label styleClass="labelgeneral" text="Nivel (I-II-III-IV-V)" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ComboBox prefHeight="26.0" prefWidth="122.0" promptText="Nivel I" styleClass="combobox" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER">
+                                                   <children>
+                                                      <Label styleClass="labelgeneral" text="Valor (%)" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txt_VlrRiesgo" alignment="CENTER" prefHeight="25.0" prefWidth="114.0" promptText="0,522%" styleClass="cajaTextField" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <Label styleClass="labelgeneral" text="Estado" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="cbox_EstRiesgo" onKeyPressed="#llamarEstado" prefWidth="150.0" promptText="Seleccionar Estado" styleClass="combobox" />
+                                          <HBox alignment="CENTER" spacing="20.0">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" top="10.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <Button fx:id="btn_agrRiesgo" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="41.0" styleClass="btnagr">
+                                                   <padding>
+                                                      <Insets left="2.0" right="2.0" />
+                                                   </padding>
+                                                   <graphic>
+                                                      <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../../../../../Iconos/icons8_plus_mathN_64.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="btn_actRiesgo" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="41.0" styleClass="btnact">
+                                                   <padding>
+                                                      <Insets left="2.0" right="2.0" />
+                                                   </padding>
+                                                   <graphic>
+                                                      <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../../../../../Iconos/icons8_Refresh_64.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="btn_eliRiesgo" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="41.0" styleClass="btneliminar">
+                                                   <padding>
+                                                      <Insets left="2.0" right="2.0" />
+                                                   </padding>
+                                                   <graphic>
+                                                      <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../../../../../Iconos/rojo_icons8_remove_64.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <TableView fx:id="tbl_RiesgosARL" prefHeight="487.0" prefWidth="153.0" styleClass="tableView" VBox.vgrow="ALWAYS">
+                                             <columns>
+                                                <TableColumn fx:id="col_idRiesgoARL" editable="false" prefWidth="47.0" text="Código" />
+                                                <TableColumn fx:id="col_Nivel_Riesgo_ARL" editable="false" prefWidth="86.0" text="Nivel" />
+                                                <TableColumn fx:id="col_Valor_Riesgo_ARL" editable="false" prefWidth="62.0" text="Valor" />
+                                                <TableColumn fx:id="col_EstRiesgoARL" editable="false" minWidth="0.0" prefWidth="64.0" resizable="false" text="Estado" />
+                                             </columns>
+                                             <padding>
+                                                <Insets right="14.0" />
+                                             </padding>
+                                          </TableView>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="680.0" prefWidth="1050.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox prefHeight="521.0" prefWidth="678.0">
+                                 <children>
+                                    <VBox prefHeight="501.0" prefWidth="658.0" spacing="10.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="20.0" prefWidth="696.0">
+                                             <children>
+                                                <Label graphicTextGap="0.0" styleClass="labelgeneral" text="Sistema General de Seguridad Social en Salud (SGSSS)">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <VBox alignment="CENTER" layoutX="13.0" layoutY="52.0" minHeight="25.0">
+                                             <children>
+                                                <GridPane alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="652.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="4">
+                                                         <children>
+                                                            <Label styleClass="labelgeneral" text="Empleado">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="5">
+                                                         <children>
+                                                            <Label styleClass="labelgeneral" text="Empleador">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="3">
+                                                         <children>
+                                                            <Label styleClass="labelgeneral" text="Fecha Afilicion">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </VBox>
+                                          <VBox>
+                                             <children>
+                                                <HBox alignment="CENTER" prefHeight="20.0" prefWidth="696.0">
+                                                   <children>
+                                                      <Label graphicTextGap="0.0" styleClass="labelgeneral" text="Prestaciones Sociales">
+                                                         <font>
+                                                            <Font name="System Bold Italic" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <GridPane alignment="CENTER_LEFT" prefHeight="110.0" prefWidth="466.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <HBox alignment="CENTER">
+                                                         <children>
+                                                            <Label styleClass="labelgeneral" text="Cesantías">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="1">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" GridPane.columnIndex="2">
+                                                         <children>
+                                                            <TextField fx:id="txt_FondoCes" editable="false" prefHeight="25.0" prefWidth="208.0" styleClass="cajaTextField" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <Label styleClass="labelgeneral" text="Intereses C">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <TextField fx:id="txt_IntCes" editable="false" prefHeight="25.0" prefWidth="208.0" styleClass="cajaTextField" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <Label styleClass="labelgeneral" text="Prima">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <TextField fx:id="txt_Prima" editable="false" prefHeight="25.0" prefWidth="208.0" styleClass="cajaTextField" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.rowIndex="3">
+                                                         <children>
+                                                            <Label styleClass="labelgeneral" text="Vacaciones">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                         <children>
+                                                            <TextField fx:id="txt_Vacaciones" editable="false" prefHeight="25.0" prefWidth="208.0" styleClass="cajaTextField" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="4">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="5">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="13.0" layoutY="67.0">
+                                             <children>
+                                                <HBox alignment="CENTER" prefHeight="20.0" prefWidth="696.0">
+                                                   <children>
+                                                      <Label graphicTextGap="0.0" styleClass="labelgeneral" text="Aportes a Seguridad Social">
+                                                         <font>
+                                                            <Font name="System Bold Italic" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <GridPane prefHeight="80.0" prefWidth="652.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <HBox alignment="CENTER">
+                                                         <children>
+                                                            <Label styleClass="labelgeneral" text="AFP">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="1">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" GridPane.columnIndex="2">
+                                                         <children>
+                                                            <TextField fx:id="txt_AFP" editable="false" prefHeight="25.0" prefWidth="208.0" styleClass="cajaTextField" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <Label styleClass="labelgeneral" text="EPS">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <TextField fx:id="txt_EPS" editable="false" prefHeight="25.0" prefWidth="208.0" styleClass="cajaTextField" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <Label styleClass="labelgeneral" text="ARL">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <TextField fx:id="txt_ARL" editable="false" prefHeight="25.0" prefWidth="208.0" styleClass="cajaTextField" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="4">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="5">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <DatePicker prefWidth="100.0" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="3">
+                                                         <children>
+                                                            <DatePicker prefWidth="100.0" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <DatePicker prefWidth="100.0" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="13.0" layoutY="346.0">
+                                             <children>
+                                                <HBox alignment="CENTER" prefHeight="20.0" prefWidth="696.0">
+                                                   <children>
+                                                      <Label graphicTextGap="0.0" styleClass="labelgeneral" text="Aportes Parafiscales">
+                                                         <font>
+                                                            <Font name="System Bold Italic" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <GridPane prefHeight="80.0" prefWidth="632.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <HBox alignment="CENTER">
+                                                         <children>
+                                                            <Label styleClass="labelgeneral" text="CCF">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="1">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" GridPane.columnIndex="2">
+                                                         <children>
+                                                            <TextField fx:id="txt_CCF" editable="false" prefHeight="25.0" prefWidth="208.0" styleClass="cajaTextField" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <Label styleClass="labelgeneral" text="ICBF">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <TextField fx:id="txt_ICBF" editable="false" prefHeight="25.0" prefWidth="208.0" styleClass="cajaTextField" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <Label styleClass="labelgeneral" text="SENA">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <TextField fx:id="txt_SENA" editable="false" prefHeight="25.0" prefWidth="208.0" styleClass="cajaTextField" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="4" />
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="5">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="3">
+                                                         <children>
+                                                            <DatePicker prefWidth="100.0" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <DatePicker prefWidth="100.0" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <DatePicker prefWidth="100.0" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="13.0" layoutY="337.0">
+                                             <children>
+                                                <HBox alignment="CENTER" prefHeight="20.0" prefWidth="696.0">
+                                                   <children>
+                                                      <Label graphicTextGap="0.0" styleClass="labelgeneral" text="Otro Concepto">
+                                                         <font>
+                                                            <Font name="System Bold Italic" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <GridPane layoutX="10.0" layoutY="30.0" prefHeight="35.0" prefWidth="652.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <HBox alignment="CENTER_LEFT">
+                                                         <children>
+                                                            <ComboBox prefHeight="25.0" prefWidth="77.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="1">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" GridPane.columnIndex="2">
+                                                         <children>
+                                                            <TextField editable="false" prefHeight="25.0" prefWidth="208.0" styleClass="cajaTextField" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="4">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="5">
+                                                         <children>
+                                                            <ComboBox prefWidth="60.0" styleClass="combobox">
+                                                               <tooltip>
+                                                                  <Tooltip text="F4" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" GridPane.columnIndex="3">
+                                                         <children>
+                                                            <DatePicker prefWidth="100.0" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <padding>
+                                          <Insets left="3.0" right="3.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="680.0" prefWidth="1050.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="521.0" prefWidth="678.0">
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" top="20.0" />
+                                 </padding>
+                                 <children>
+                                    <VBox prefHeight="421.0" prefWidth="668.0" spacing="20.0">
+                                       <children>
+                                          <HBox spacing="10.0">
+                                             <children>
+                                                <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0">
+                                                   <children>
+                                                      <Label text="Codigo">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField prefHeight="25.0" prefWidth="60.0" styleClass="cajaTextField" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER">
+                                                   <children>
+                                                      <Label text="Año">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField prefHeight="25.0" prefWidth="60.0" styleClass="cajaTextField" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER">
+                                                   <children>
+                                                      <Label text="Concepto">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField styleClass="cajaTextField" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER">
+                                                   <children>
+                                                      <Label text="Empleador">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField prefWidth="80.0" styleClass="cajaTextField" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER">
+                                                   <children>
+                                                      <Label text="Empleado">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField prefWidth="80.0" styleClass="cajaTextField" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER">
+                                                   <children>
+                                                      <Label text="Estado">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ComboBox prefWidth="150.0" styleClass="combobox" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="141.0" prefWidth="625.0">
+                                             <children>
+                                                <GridPane prefHeight="141.0" prefWidth="634.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="515.0" minWidth="10.0" prefWidth="469.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="329.0" minWidth="10.0" prefWidth="156.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="141.0" prefWidth="468.0">
+                                                         <children>
+                                                            <TableView prefHeight="141.0" prefWidth="468.0" styleClass="tableView">
+                                                               <columns>
+                                                                  <TableColumn prefWidth="49.0" text="Codigo" />
+                                                                  <TableColumn prefWidth="49.0" text="Año" />
+                                                                  <TableColumn prefWidth="183.0" text="Concepto" />
+                                                                  <TableColumn prefWidth="63.0" text="Empleado" />
+                                                                  <TableColumn prefWidth="65.0" text="Empleador" />
+                                                                  <TableColumn prefWidth="57.0" text="Estado" />
+                                                               </columns>
+                                                            </TableView>
+                                                         </children>
+                                                      </HBox>
+                                                      <VBox alignment="CENTER" GridPane.columnIndex="1">
+                                                         <children>
+                                                            <Button mnemonicParsing="false" text="Agregar" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+               <left>
+                  <AnchorPane styleClass="panelemergente" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox layoutX="11.0" layoutY="17.0" spacing="10.0">
+                                 <children>
+                                    <Button fx:id="btn_RiesgoARL" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="130.0" styleClass="btn" text="Riesgo ARL" textAlignment="CENTER" wrapText="true" />
+                                    <Button fx:id="btn_Vinculaciones" graphicTextGap="0.0" layoutX="10.0" layoutY="80.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="130.0" styleClass="btn" text="Vinculaciones SGSSS" textAlignment="CENTER" wrapText="true" />
+                                    <Button fx:id="btn_ConceptosSGSSS" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="130.0" styleClass="btn" text="Conceptos SGSSS" textAlignment="CENTER" wrapText="true" />
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

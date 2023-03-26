@@ -1,0 +1,205 @@
+
+
+
+.panelemergente{
+    //-fx-background-color: linear-gradient(to top right,#8C8F0F,#DEF338,#F0D700);
+    -fx-background-color: linear-gradient(to right, #720e28,#ab0934);
+    //-fx-background-color: linear-gradient(to top right, #008b8b, #007e99, #006fa7 0%,   #0086e9, #00b1fb, #00d9ff, #00ffff);
+    -fx-border-radius:0px 0px 0px 5px;
+    -fx-background-radius:0px 0px 8px 4px;
+    -fx-border-width:.0px 0px 0px .4px;
+}
+
+.btnminimizar{
+    -fx-background-color:Transparent;
+    -fx-background-radius:2px 2px 2px 2px;
+    -fx-border-width: 0px 0px 0px 0px;
+}
+    .btnminimizar:hover{
+        -fx-background-color: #fff;/* linear-gradient(to right top, #ff0000, #ff003c, #ff0064, #f60088, #de11a9);*/
+        -fx-border-width: .0px .0px .0px .0px;
+        -fx-border-color:linear-gradient(to right top, #ff0000, #ff003c, #ff0064, #f60088, #de11a9);
+    }
+
+.btnCerrar{
+    -fx-background-color:Transparent;
+    -fx-background-radius:4px 4px 4px 4px;
+    -fx-border-width: 0px 0px 0px 0px;
+}
+    .btnCerrar:hover{
+        -fx-background-color:linear-gradient(to right top, #ff0000, #ff003c, #ff0064, #f60088, #de11a9);
+        -fx-border-width: .0px .0px .0px .0px;
+        -fx-border-color:linear-gradient(to right top, #ff0000, #ff003c, #ff0064, #f60088, #de11a9);
+    }
+
+.btn{
+    //-fx-background-color:linear-gradient(to right, #720e28,#ab0934);
+    -fx-background-color:linear-gradient(to top right, #008b8b, #007e99, #006fa7 0%,   #0086e9, #00b1fb, #00d9ff, #00ffff);
+    -fx-background-radius:4px;
+    -fx-cursor:hand;
+    -fx-text-fill:#fff;
+    -fx-font-weight: bold;
+}
+    .btn:hover{
+        -fx-background-color:linear-gradient(to right top, #ff0000, #ff003c, #ff0064, #f60088, #de11a9);
+    }
+
+.btnagr{
+    -fx-background-color:Transparent;
+}
+    .btnagr:hover{
+        -fx-background-color:linear-gradient(to right, #0f3443, #34e89e);
+        -fx-effect:dropshadow(three-pass-box, RGB(0,0,0,0.9), 15px,0.10px,2px,0px);
+    }
+
+.btnact{
+    -fx-background-color:Transparent;
+}
+    .btnact:hover{
+        -fx-background-color: linear-gradient(to right, #FFFDE4, #005AA7);
+        -fx-border-width: .0px .0px .0px .0px;
+        -fx-border-color: linear-gradient(to right, #FFFDE4, #005AA7);
+    }
+
+.btneliminar{
+    -fx-background-color:Transparent;
+}
+    .btneliminar:hover{
+        -fx-background-color:linear-gradient(to right, #514345, #232526);
+        -fx-border-width: 1px 1px 1px 1px;
+        -fx-border-radius:5px 5px 5px 5px;
+        -fx-border-style:solid;
+    }
+
+.tableView{
+    -fx-border-color:#636464;
+    -fx-border-width:0.4px;
+    -fx-padding:0px;
+    -fx-border-radius: 6px 6px 8px 8px;
+
+    -fx-background-color: #fff;
+}
+    .tableView.column-header-background{
+        -fx-background-color: linear-gradient(to top right, #008b8b, #007e99, #006fa7 0%,   #0086e9, #00b1fb, #00d9ff, #00ffff);
+        -fx-background-radius: 8px 8px 0px 0px;
+        -fx-background-radius:6px 6px 8px 8px;
+        -fx-background-insets: 0 0 0 0;
+    }
+    .tableView .column-header, .filter{
+        -fx-background-color: linear-gradient(to top right, #008b8b, #007e99, #006fa7 0%,   #0086e9, #00b1fb, #00d9ff, #00ffff);
+        -fx-background-radius:4px 4px 3px 3px;
+        -fx-size:25px;
+    }
+    .tableView .column-header .label{
+        -fx-text-fill:#fff;
+    } //Código CSS para las TableViw
+
+.combobox{
+    -fx-background-color:#F2F2F2;
+    -fx-border-width:0px 0px 1px 0px;
+    -fx-border-radius:4px 4px 4px 4px;
+    -fx-border-color:#000;
+    //-fx-min-width:;
+    -fx-min-height:25px; /*Ancho mínimo*/
+    //-fx-pref-width:;
+    -fx-pref-height:25px;
+    //-fx-max-width:;
+    -fx-max-height:25px;
+}
+    .combobox:hover{
+        -fx-background-color:#e1e1e1;
+    }
+
+.cajaTextField{
+    //-fx-min-width:;
+    -fx-min-height:25px; /*Ancho mínimo*/
+    //-fx-pref-width:;
+    -fx-pref-height:25px;
+    //-fx-max-width:;
+    -fx-max-height:25px;
+}
+    .cajaTextField:hover{
+        -fx-background-color:#e1e1e1;
+        -fx-border-color:#6f6f6f;
+        -fx-border-radius:4px 4px 4px 4px;
+    }
+
+.labelgeneral{
+    -fx-font-family:Tahoma;
+    -fx-font-size:12px;
+    -fx-text-fill: #000;
+    -fx-font-weight: bold;
+}
+
+.estiloforma{
+    -fx-background-color:#F2F2F2;
+    -fx-background-radius:8px;
+    -fx-effect:dropshadow(three-pass-box, RGB(0,0,0,0.7), 5px,0.10px,0px,0px);
+}
+
+/* Modificar el color de fondo del área del Panel de TabPane */
+.tab-pane {
+    -fx-background-color: #e6e6e6;
+}
+    /* Modificar el color de fondo de la pestaña */
+    .tab {
+        -fx-background-color:#000;
+    }
+    /* Modificar el color de fondo de la barra superior */
+    .tab-pane>*.tab-header-area>*.tab-header-background{
+        -fx-background-color:linear-gradient(to top right, #008b8b, #007e99, #006fa7 0%,   #0086e9, #00b1fb, #00d9ff, #00ffff);
+        //-fx-outer-border:red;
+        //-fx-text-box-border, #000;
+    }
+    /* Modificar el color del texto en la pestaña */
+    .tab-label {
+        -fx-text-fill: #fff;
+        -fx-font-family:Tahoma;
+        -fx-font-size:12px;
+        -fx-font-weight: bold;
+    }
+    /* Propiedades para el titulo del texto cuando seleccionas una pestaña */
+    .tab:selected .tab-label{
+        -fx-text-fill: #fff;
+    }
+    /* Establecer el color de fondo cuando se selecciona la pestaña */
+    .tab:selected {
+        -fx-background-color:linear-gradient(to right top, #ff0000, #ff003c, #ff0064, #f60088, #de11a9);
+    }
+    /* Cuando se selecciona Tab, seleccione su borde y modifique el estilo */
+    .tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+        -fx-border-width: 1px 1px 1px 1px;
+        -fx-border-radius:4px 4px 0px 0px;
+        -fx-border-color: #fff;
+    }
+
+.borderinf{
+    -fx-border-style:solid;
+    -fx-border-color:RGB(128,125,125,0.8);
+    -fx-border-width: 0px 0px 1px 1px;
+    -fx-border-radius:0px 0px 4px 8px;
+
+}
+
+.TituloModuloEmergente{
+    -fx-font-family:Tahoma;
+    -fx-font-size:32px;
+    -fx-text-fill:linear-gradient(to right top, #ffffff 50%, #bbbbbb);
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+/*
+tabpanel.items.items[0].tab.setVisible(false);
+
+autoDestroy: false
+
+Panel Obtener pestaña
+var tabPanel = wnd.down('#myTabPanel');
+
+if (showTab1) {
+    tabPanel.down('#myTab1').show();
+    tabPanel.down('#myTab2').hide();
+} else {
+    tabPanel.down('#myTab1').hide();
+    tabPanel.down('#myTab2').show();
+*/

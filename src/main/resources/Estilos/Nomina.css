@@ -1,0 +1,144 @@
+/*
+Boolean: Cuando su valor sea boolean, significa true o false
+Size: Cuando es Size se refiere a un numero entero del 1 - 9
+-fx-font-family: serif (Times), sans-serif(Helvetica)..etc  --> Para determinar el tipo de letra es decir, la fuente con la que se va a trabajar
+-fx-font-style:[ normal | italic | oblique ] --> Se refiere normal o cursiva
+-fx-font-size: --> Se refiere al tamaño de la letra
+-fx-text-fill: --> Se refiere al color de la letra
+-fx-background-color: --> Se refiere al color de fondo
+-fx-border-style:NONE, SOLID, DOTTED, DASHED segments(10, 15, 15, 15)  line-cap round  --> Se refiere al estilo del
+                 borde, puede ser punteado o solido entre otros
+-fx-border-width: -->5px Se refiere al ancho de la linea de los bordes
+-fx-border-color: -->5px Se refiere al color del borde que se le de a algo
+-fx-background-radius: 10 10 10 10; --> Se refiere al establecimiento del color de fondo de un borde o
+redondeado de las 4 esquinas de algo
+-fx-border-radius: 10 10 10 10; --> Se refiere a cuanto se redondean los dordes de algo
+Button:hover {-fx-background-color: #333333;} --> Se usa para cambiar de fondo cuando se pasa el
+cursor por un boton por ejemplo
+
+El siguiente, se usa para cuando se presiona un boton cambie de color
+Button:pressed { -fx-background-color: #FFFFFF;
+-fx-text-fill: #000000;}
+-fx-font-weight: bold; Sirve para que la letra sea negrilla
+-fx-text-alignment: left, center, right, justify --> Sirve para alinear el texto
+-fx-alignment:top-left, top-center, top-right, center-left, center, center-right,
+    bottom-left,, bottom-center, bottom-right, baseline-left, baseline-center,
+    baseline-right --> sirve para alinear el objeto
+-fx-cursor:hand;  --> Para que el cursor tome forma de mano
+    -fx-min-width:30; --> Minimo de ancho
+    -fx-pref-width:30:  --> Predeterminado de ancho
+    -fx-max-width:  --> Maximo de ancho
+    -fx-pref-height:30;  --> Predeterminado de alto
+    -fx-min-height:30;  --> Minimo de alto
+    -fx-max-height:30;  --> Maximo de alto
+Ejemplo: En el sifuiente código, el Desing-ButtonInicio es la clase y
+va en el campo Propierties: Style Class en el Scene Builder
+*/
+
+/*---------------------------------------------------------------
+Área de establecimiento de Fondos
+*/
+.Nomina-FondoPrincipal{
+    -fx-background-color: #2F528F;
+}
+.Nomina-FondoSecundario{
+    -fx-background-color: #4472C4;
+}
+.Nomina-FondoTransparent{
+    -fx-background-color: TRANSPARENT;
+}
+/*---------------------------------------------------------------
+Área de establecimiento de configuración CSS de Radio
+*/
+.Nomina-RadioGeneral{
+    -fx-border-radius:5px;
+    -fx-background-radius:5px;
+}
+.Nomina-RadioSecundario{
+    -fx-border-radius:2px;
+    -fx-background-radius:2px;
+}
+/*---------------------------------------------------------------
+Área de Establecimiento de configuración CSS de Botones
+*/
+.Nomina-Botones{
+    -fx-background-color:#CD1313;
+    -fx-border-color:#FFFFFF;
+    -fx-border-radius:5px;
+    -fx-background-radius:5px;
+    -fx-font-family: Arial;
+    -fx-font-weight: bold;
+    -fx-text-fill:#FFFFFF;
+    -fx-pref-height:35;
+    -fx-min-height:35;
+    -fx-max-height:35;
+    -fx-alignment:center;
+}
+    .Nomina-Botones:hover{
+        -fx-background-color:#D5D5D5;
+        -fx-font-weight: bold;
+    }
+    .Nomina-Botones:pressed{
+        -fx-background-color:red;
+    }
+/*---------------------------------------------------------------
+Área de establecimiento de configuración CSS para ComboBox
+*/
+.Nomina-ComboBox{
+    -fx-background-color:#FFFFFF;
+    -fx-prompt-text-fill:#c3c3c3;
+}
+    .Nomina-ComboBox:hover{
+        -fx-background-color:#D5D5D5;
+        -fx-prompt-text-fill:#FFFFFF;
+        -fx-text-fill:#FFFFFF;
+    }
+/*    .Nomina-ComboBox:pressed{
+        -fx-background-color:red;
+    }*/
+/*---------------------------------------------------------------
+Área de establecimiento de configuración CSS para TEXT-FIELD
+*/
+.Nomina-TextFiel{
+    -fx-background-color: #FFFFFF;
+    -fx-border-color:#FFFFFF;
+    -fx-border-radius:5px;
+    -fx-font-family: Arial;
+    -fx-text-alignment: justify;
+    -fx-font-size: 12;
+}
+    .Nomina-TextFiel:hover{
+        -fx-background-color:#D5D5D5;
+    }
+/*    .Nomina-TextFiel:pressed{
+        -fx-background-color:red;
+    }*/
+    .Nomina-TextFiel:focused{
+        -fx-background-color:#EAEAEA;
+    }
+
+/*---------------------------------------------------------------
+Área de establecimiento de configuración CSS para TABLEVIEW
+-fx-size para el tamaño del encabezado
+*/
+.Nomina-TableView{
+    -fx-cell-size:5;
+    -fx-size:25;
+}
+    .Nomina-TableView-cell-selection{
+    }
+    .Nomina-TableView-row-selection{
+
+    }
+/*---------------------------------------------------------------
+Para los titulos del modulo de nomina
+*/
+.Nomina-TitulosMod{
+    -fx-font-family: Arial;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-text-fill:#FFFFFF;
+}
+
+
+
