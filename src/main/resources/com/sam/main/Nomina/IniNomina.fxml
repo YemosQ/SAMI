@@ -760,7 +760,7 @@
                                                    <children>
                                                       <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="15.0" spacing="3.0">
                                                          <children>
-                                                            <Label prefHeight="15.0" prefWidth="55.0" styleClass="labelgeneral" text="SEDE" textFill="WHITE">
+                                                            <Label prefHeight="15.0" prefWidth="55.0" styleClass="labelgeneral" text="SEDES" textFill="WHITE">
                                                                <font>
                                                                   <Font name="System Bold" size="12.0" />
                                                                </font>
@@ -780,13 +780,13 @@
                                                                   <Font name="System Bold" size="12.0" />
                                                                </font>
                                                             </Label>
-                                                            <TextField fx:id="txt_NombreEmpresa" editable="false" focusTraversable="false" prefHeight="25.0" prefWidth="213.0" />
+                                                            <TextField fx:id="txt_NombreEmpresa" editable="false" focusTraversable="false" prefHeight="25.0" prefWidth="269.0" />
                                                             <Label styleClass="labelgeneral" text="Nit" textFill="WHITE">
                                                                <font>
                                                                   <Font name="System Bold" size="12.0" />
                                                                </font>
                                                             </Label>
-                                                            <TextField fx:id="txt_NitEmpresa" editable="false" focusTraversable="false" prefHeight="25.0" prefWidth="123.0" />
+                                                            <TextField fx:id="txt_NitEmpresa" alignment="CENTER_RIGHT" editable="false" focusTraversable="false" prefHeight="25.0" prefWidth="100.0" />
                                                             <Label styleClass="labelgeneral" text="Dv" textFill="WHITE">
                                                                <font>
                                                                   <Font name="System Bold" size="12.0" />
@@ -808,13 +808,13 @@
                                                                   <Font name="System Bold" size="12.0" />
                                                                </font>
                                                             </Label>
-                                                            <TextField fx:id="txt_NombreSede" prefHeight="25.0" prefWidth="258.0" />
+                                                            <TextField fx:id="txt_NombreSede" prefHeight="25.0" prefWidth="299.0" />
                                                             <Label styleClass="labelgeneral" text="Nit" textFill="WHITE">
                                                                <font>
                                                                   <Font name="System Bold" size="12.0" />
                                                                </font>
                                                             </Label>
-                                                            <TextField fx:id="txt_NitSede" prefHeight="25.0" prefWidth="123.0" />
+                                                            <TextField fx:id="txt_NitSede" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="100.0" />
                                                             <Label styleClass="labelgeneral" text="Dv" textFill="WHITE">
                                                                <font>
                                                                   <Font name="System Bold" size="12.0" />
