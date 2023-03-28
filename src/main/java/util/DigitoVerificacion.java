@@ -96,5 +96,19 @@ public class DigitoVerificacion extends TextField {
             return String.valueOf(result);
         }
     }
+    
+    
+    public static int calcularDigitoVerificacion(String numero) {
+    int base = 0;
+    int[] valores = {71, 67, 59, 53, 47, 43, 41, 37, 29, 23, 19, 17, 13, 7, 3};
+    for (int i = 0; i < numero.length(); i++) {
+        base += Character.getNumericValue(numero.charAt(i)) * valores[i];
+    }
+    int resultado = base % 11;
+    if (resultado == 10) {
+        resultado = 0;
+    }
+    return resultado;
+}
 
 }
