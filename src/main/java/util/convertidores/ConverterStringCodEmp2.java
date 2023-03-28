@@ -3,10 +3,10 @@ package util.convertidores;
 import javafx.util.StringConverter;
 import modelo.Nomina.CodigosDAO;
 
-public class ConverterStringCodEmp extends StringConverter<CodigosDAO> {
+public class ConverterStringCodEmp2 extends StringConverter<CodigosDAO> {
     @Override
     public String toString(CodigosDAO codigo) {
-        return codigo != null ? codigo.getCodigoempresa() +" - "+ codigo.getNombreempresa(): null;
+        return codigo != null ? codigo.getCodigoempresa(): null;
     }
 
     @Override

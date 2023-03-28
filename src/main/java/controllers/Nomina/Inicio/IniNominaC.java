@@ -36,6 +36,7 @@ import modelo.Nomina.DatosTablasDAO;
 import modelo.Nomina.EmergenteEstadosPaisesDAO;
 import util.*;
 import util.convertidores.ConverterStringCodEmp;
+import util.convertidores.ConverterStringCodEmp2;
 
 
 import javax.swing.*;
@@ -830,6 +831,7 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     }
 
     public void cargarCodigos() {
+        cbox_CodEmp.setConverter(new ConverterStringCodEmp());
         CargarCodigos cod = new CargarCodigos();
         Object listacod=cod.codigosempresas();
         cbox_CodEmp.setItems((ObservableList<CodigosDAO>) listacod);
@@ -837,10 +839,14 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
         /**
         * Con el siguiente codigo se logra seleccionar un elemento del combobox y como varios elementos fueron llamados
         * de la base de datos, entonces pueden ser asignados a otros elementos
+         * Con esta estructura logro que en la visual de la lista se vea el codigo y el nombre de la empresa
+         * Pero al momento de realizar la selección se verá solo el codigo
         * */
-        cbox_CodEmp.setOnAction(event -> {
+        cbox_CodEmp.setOnAction(event -> { //Se le asocia evento para cada vez que haya movimiento, ejecute una accion
+            // que en este caso seria rellenar los campos que estan dentro del if
             CodigosDAO codigoSeleccionado = cbox_CodEmp.getSelectionModel().getSelectedItem();
             if (codigoSeleccionado != null) {
+                cbox_CodEmp.setConverter(new ConverterStringCodEmp2());
                 txt_NombreEmpresa.setText(codigoSeleccionado.getNombreempresa());
                 txt_NitEmpresa.setText(codigoSeleccionado.getNitempresa());
                 txt_DvEmpresa.setText(codigoSeleccionado.getDvempresa());
