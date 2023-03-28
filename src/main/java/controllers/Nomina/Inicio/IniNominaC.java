@@ -1,10 +1,16 @@
 package controllers.Nomina.Inicio;
 
+/**
+ * En esta se crea todo el manejo de la ventana de Inicio de Nomina. Es la parte princi&aacute;l desde donde se manejar&aacute; todo
+ * el procedimiento de controlar la nomina.
+ */
+
 import com.sam.main.Principal;
 import consultas.nominanuevo.EstSexPob;
 import consultas.nominanuevo.PaisDeptoMuni;
 import controllers.Login.LoginC;
 import controllers.Login.Logout;
+import controllers.Nomina.Otros.CargarCodigos;
 import controllers.Nomina.Otros.RellenarTablas;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,6 +31,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import modelo.Nomina.CodigosDAO;
 import modelo.Nomina.DatosTablasDAO;
 import modelo.Nomina.EmergenteEstadosPaisesDAO;
 import util.*;
@@ -39,8 +46,8 @@ import java.util.*;
 public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
 
 
-/*ESTE CODIGO
-
+/**
+ * En las siguientes lineas se establecen todas las variables
 */
 
 
@@ -166,6 +173,8 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_PaisEmpr;
     @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_DptoEmpr;
     @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_MunEmpr;
+    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_PaisDr;
+    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_SexNa;
     @FXML private ComboBox<?> cbox_CoArea;
     @FXML private ComboBox<?> cbox_CoCarg;
     @FXML private ComboBox<?> cbox_CoCencost;
@@ -181,17 +190,15 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     @FXML private ComboBox<?> cbox_CodSClaseAs;
     @FXML private ComboBox<?> cbox_EstCCosto;
     @FXML private ComboBox<?> cbox_EstClase;
-    @FXML private ChoiceBox<?> cbox_EstDoc;
-    @FXML private ChoiceBox<?> cbox_EstEnt;
-    @FXML private ChoiceBox<?> cbox_EstRegFis;
-    @FXML private ChoiceBox<?> cbox_EstRespFis;
+    @FXML private ComboBox<?> cbox_EstDoc;
+    @FXML private ComboBox<?> cbox_EstEnt;
+    @FXML private ComboBox<?> cbox_EstRegFis;
+    @FXML private ComboBox<?> cbox_EstRespFis;
     @FXML private ComboBox<?> cbox_EstSClase;
-    @FXML private ChoiceBox<?> cbox_EstTpContri;
+    @FXML private ComboBox<?> cbox_EstTpContri;
     @FXML private ComboBox<?> cbox_EstTpCosto;
-    @FXML private ChoiceBox<?> cbox_EstTpPerso;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_PaisDr;
+    @FXML private ComboBox<?> cbox_EstTpPerso;
     @FXML private ComboBox<?> cbox_Sede;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_SexNa;
     @FXML private ComboBox<?> cbox_TpCont;
     @FXML private ComboBox<?> cbox_TpCost;
     @FXML private ComboBox<?> cbox_TpCta;
@@ -199,6 +206,7 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     @FXML private ComboBox<?> cbox_TpVinc;
     @FXML private ComboBox<?> cbox_TpVlr;
     @FXML private ComboBox<?> cbox_anioCc;
+    @FXML private ComboBox<CodigosDAO> cbox_CodEmp;
      //COMBO BOX
 
     @FXML private TableColumn<?, ?> colCsc;
@@ -254,6 +262,7 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
 
     @FXML private TableView<?> tbl_TpRegFis; //TABLEVIEW
 
+
     private static Object eleccion;
     @FXML private Label label_user;
     private Image imagen;
@@ -262,9 +271,6 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     public static String elementodeevento;
     private String idevento;
 
-
-//AQUI TERMINA LAS DECLARACIONES
- //AQUÍ SE ENCUENTRA LAS DECLARACIONES DE ATRIBUTOS DEL PANEL PRINCIPAL
 
     @Override public void initialize(URL url, ResourceBundle resourceBundle) {
         this.onDraggedScene(this.panelcontenedor);
@@ -805,28 +811,50 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
         txt_Cod_Emp.setText(cod);
     }
     @FXML void cargarEstados() {
-        //JOptionPane.showMessageDialog(null,"Entrando a lista de sexo");
-        //cbox_SexNa.getItems().removeAll(cbox_SexNa.getItems());
         EstSexPob estados =  new  EstSexPob();
         Object list = estados.listaEstados();
         cbox_EstEmpr.getItems().addAll((Collection<? extends EmergenteEstadosPaisesDAO>) list);
         cbox_EstEmpr.setConverter(new ConverterStringEstados());
     }
+
     public void cargarEmpresas() {
-        col_NitEmpresa.setCellValueFactory(new PropertyValueFactory<>("nitempresa"));
-        col_NombreEmpresa.setCellValueFactory(new PropertyValueFactory<>("nombreempresa"));
-        col_EstEmpresa.setCellValueFactory(new PropertyValueFactory<>("estadoempresa"));
+        configurarColumnasTablas();
         RellenarTablas emp = new RellenarTablas();
         Object listaemp=emp.listaempresas();
         tbl_Empresa.setItems((ObservableList<DatosTablasDAO>) listaemp);
     }
+
+    public void cargarCodigos() {
+        CargarCodigos cod = new CargarCodigos();
+        Object listacod=cod.codigosempresas();
+        cbox_CodEmp.setItems((ObservableList<CodigosDAO>) listacod);
+    }
     public void cargarSedes() {
-        col_NomEmpSede.setCellValueFactory(new PropertyValueFactory<>("empresasede"));
-        col_NomSede.setCellValueFactory(new PropertyValueFactory<>("nombresede"));
-        col_EstSede.setCellValueFactory(new PropertyValueFactory<>("estadosede"));
+        configurarColumnasTablas();
         RellenarTablas sede = new RellenarTablas();
         Object listasedes=sede.listasedes();
         tbl_Sedes.setItems((ObservableList<DatosTablasDAO>) listasedes);
+    }
+
+    /**
+     * El @configurarColumnasTablas establece las columnas de las tablas y a que campo corresponden de
+     * los distintos DAO.
+     * Deben estar enlazadas a un procedimiento que permita llamar los datos de la base de datos
+     */
+    public void configurarColumnasTablas(){
+        /**
+         * configuracion de la tabla de las empresas
+         */
+        col_NitEmpresa.setCellValueFactory(new PropertyValueFactory<>("nitempresa"));
+        col_NombreEmpresa.setCellValueFactory(new PropertyValueFactory<>("nombreempresa"));
+        col_EstEmpresa.setCellValueFactory(new PropertyValueFactory<>("estadoempresa"));
+        /**
+         *Configuración de las columnas de las Sedes
+         */
+        col_NomEmpSede.setCellValueFactory(new PropertyValueFactory<>("empresasede"));
+        col_NomSede.setCellValueFactory(new PropertyValueFactory<>("nombresede"));
+        col_EstSede.setCellValueFactory(new PropertyValueFactory<>("estadosede"));
+
     }
 
 }

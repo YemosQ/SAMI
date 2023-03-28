@@ -774,7 +774,7 @@
                                                                   <Font name="System Bold" size="12.0" />
                                                                </font>
                                                             </Label>
-                                                            <ComboBox fx:id="cobx_CodEmp" prefHeight="25.0" prefWidth="68.0" />
+                                                            <ComboBox fx:id="cbox_CodEmp" onMouseClicked="#cargarCodigos" prefHeight="25.0" prefWidth="68.0" />
                                                             <Label styleClass="labelgeneral" text="Nombre Empresa" textFill="WHITE">
                                                                <font>
                                                                   <Font name="System Bold" size="12.0" />
@@ -1232,7 +1232,7 @@
                                              <children>
                                                 <HBox alignment="CENTER_LEFT" prefHeight="19.0" prefWidth="333.0" spacing="2.0">
                                                    <children>
-                                                      <TextField prefHeight="25.0" prefWidth="57.0" promptText="Buscar Empresa..." HBox.hgrow="ALWAYS" />
+                                                      <TextField prefHeight="25.0" prefWidth="57.0" promptText="Buscar Sede..." HBox.hgrow="ALWAYS" />
                                                       <Button graphicTextGap="0.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
                                                          <graphic>
                                                             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
