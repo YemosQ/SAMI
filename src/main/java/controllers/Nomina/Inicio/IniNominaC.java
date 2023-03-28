@@ -35,6 +35,8 @@ import modelo.Nomina.CodigosDAO;
 import modelo.Nomina.DatosTablasDAO;
 import modelo.Nomina.EmergenteEstadosPaisesDAO;
 import util.*;
+import util.convertidores.ConverterStringCodEmp;
+
 
 import javax.swing.*;
 import java.io.File;
@@ -110,6 +112,9 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     @FXML private TextField txt_TpEnt;
     @FXML private TextField txt_TpPerso;
     @FXML private TextField txt_TpRegFis;
+    @FXML private TextField txt_NombreEmpresa;
+    @FXML private TextField txt_NitEmpresa;
+    @FXML private TextField txt_DvEmpresa;
     @FXML private TextField txt_TpRespFis;//TEXTFIELD
 
     @FXML private CheckBox Hg;
@@ -828,6 +833,19 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
         CargarCodigos cod = new CargarCodigos();
         Object listacod=cod.codigosempresas();
         cbox_CodEmp.setItems((ObservableList<CodigosDAO>) listacod);
+        cbox_CodEmp.setConverter(new ConverterStringCodEmp());
+        /**
+        * Con el siguiente codigo se logra seleccionar un elemento del combobox y como varios elementos fueron llamados
+        * de la base de datos, entonces pueden ser asignados a otros elementos
+        * */
+        cbox_CodEmp.setOnAction(event -> {
+            CodigosDAO codigoSeleccionado = cbox_CodEmp.getSelectionModel().getSelectedItem();
+            if (codigoSeleccionado != null) {
+                txt_NombreEmpresa.setText(codigoSeleccionado.getNombreempresa());
+                txt_NitEmpresa.setText(codigoSeleccionado.getNitempresa());
+                txt_DvEmpresa.setText(codigoSeleccionado.getDvempresa());
+            }
+        });
     }
     public void cargarSedes() {
         configurarColumnasTablas();

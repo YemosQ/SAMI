@@ -774,7 +774,7 @@
                                                                   <Font name="System Bold" size="12.0" />
                                                                </font>
                                                             </Label>
-                                                            <ComboBox fx:id="cbox_CodEmp" onMouseClicked="#cargarCodigos" prefHeight="25.0" prefWidth="68.0" />
+                                                            <ComboBox fx:id="cbox_CodEmp" onMouseClicked="#cargarCodigos" prefHeight="25.0" prefWidth="68.0" styleClass="combobox" />
                                                             <Label styleClass="labelgeneral" text="Nombre Empresa" textFill="WHITE">
                                                                <font>
                                                                   <Font name="System Bold" size="12.0" />
@@ -830,19 +830,19 @@
                                                                   <Font name="System Bold" size="12.0" />
                                                                </font>
                                                             </Label>
-                                                            <ComboBox fx:id="cbox_PaisSede" prefWidth="150.0" />
+                                                            <ComboBox fx:id="cbox_PaisSede" prefWidth="150.0" styleClass="combobox" />
                                                             <Label styleClass="labelgeneral" text="Departamento" textFill="WHITE">
                                                                <font>
                                                                   <Font name="System Bold" size="12.0" />
                                                                </font>
                                                             </Label>
-                                                            <ComboBox fx:id="cbox_DeptoSede" prefWidth="150.0" />
+                                                            <ComboBox fx:id="cbox_DeptoSede" prefWidth="150.0" styleClass="combobox" />
                                                             <Label styleClass="labelgeneral" text="Municipio" textFill="WHITE">
                                                                <font>
                                                                   <Font name="System Bold" size="12.0" />
                                                                </font>
                                                             </Label>
-                                                            <ComboBox fx:id="txt_MuniSede" prefWidth="150.0" />
+                                                            <ComboBox fx:id="txt_MuniSede" prefWidth="150.0" styleClass="combobox" />
                                                          </children>
                                                       </HBox>
                                                       <HBox alignment="CENTER_LEFT" spacing="3.0">

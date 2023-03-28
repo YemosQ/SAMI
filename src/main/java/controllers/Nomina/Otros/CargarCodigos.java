@@ -23,9 +23,13 @@ public class CargarCodigos {
             Conexion conexion =new Conexion();
             Connection con= conexion.conectar();
             Statement stm=con.createStatement();
-            ResultSet rs = stm.executeQuery("SELECT CodEmp FROM sami.tb_emp");
+            ResultSet rs = stm.executeQuery("SELECT CodEmp, DescEmp, Nit, Dv FROM sami.tb_emp");
             while (rs.next()) {
-                codigoempresas.add(new CodigosDAO(rs.getString("CodEmp")));
+                codigoempresas.add(new CodigosDAO(
+                        rs.getString("CodEmp"),
+                        rs.getString("DescEmp"),
+                        rs.getString("Nit"),
+                        rs.getString("Dv")));
             }
         } catch (Exception ex) {
             System.out.println("Error al buscar las empresas" + ex);
@@ -38,7 +42,7 @@ public class CargarCodigos {
                 throw new RuntimeException(e);
             }
         }
-        //System.out.println(empresa);
+        System.out.println("Informacion empresas: "+ codigoempresas);
         return codigoempresas;
     }
 
