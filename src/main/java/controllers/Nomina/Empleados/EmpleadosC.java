@@ -1,8 +1,8 @@
 package controllers.Nomina.Empleados;
 
 import com.sam.main.Principal;
-import consultas.nominanuevo.EstSexPob;
-import consultas.nominanuevo.PaisDeptoMuni;
+import consultas.entidad.EstSexPob;
+import consultas.entidad.PaisDeptoMuni;
 import javafx.beans.property.ObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,15 +22,12 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import modelo.Nomina.EmergenteEstadosPaisesDAO;
 import modelo.Nomina.EmpleadosDAO;
-import modelo.Nomina.EstadosDAO;
 import modelo.Nomina.PaisesDAO;
 import util.*;
 
 import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.chrono.Chronology;

@@ -20,8 +20,8 @@ module com.sam.sami {
     opens modelo.Nomina to javafx.base;
     exports controllers.Login;
     opens controllers.Login to javafx.fxml;
-    exports consultas.nominanuevo;
-    opens consultas.nominanuevo to javafx.fxml;
+    exports consultas.entidad;
+    opens consultas.entidad to javafx.fxml;
     exports controllers.Nomina.Otros;
     opens controllers.Nomina.Otros;
 

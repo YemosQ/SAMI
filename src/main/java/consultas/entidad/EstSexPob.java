@@ -1,12 +1,10 @@
-package consultas.nominanuevo;
+package consultas.entidad;
 
 import conexion.Conexion;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import modelo.Nomina.EmergenteEstadosPaisesDAO;
-import modelo.Nomina.EstadosDAO;
 
-import javax.swing.*;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;

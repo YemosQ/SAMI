@@ -6,8 +6,8 @@ package controllers.Nomina.Inicio;
  */
 
 import com.sam.main.Principal;
-import consultas.nominanuevo.EstSexPob;
-import consultas.nominanuevo.PaisDeptoMuni;
+import consultas.entidad.EstSexPob;
+import consultas.entidad.PaisDeptoMuni;
 import controllers.Login.LoginC;
 import controllers.Login.Logout;
 import controllers.Nomina.Otros.CargarCodigos;
@@ -38,17 +38,25 @@ import util.*;
 import util.convertidores.ConverterStringCodEmp;
 import util.convertidores.ConverterStringCodEmp2;
 
-
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
+import java.util.ResourceBundle;
 
 
 public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
 
 
+    public static String path;
+    public static String elementodeevento;
+    private static Object eleccion;
 /**
  * En las siguientes lineas se establecen todas las variables
 */
@@ -116,12 +124,15 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     @FXML private TextField txt_NombreEmpresa;
     @FXML private TextField txt_NitEmpresa;
     @FXML private TextField txt_DvEmpresa;
+//CHECKBOX
     @FXML private TextField txt_TpRespFis;//TEXTFIELD
+    @FXML private TextField txt_CodSede;
+    @FXML private TextField txt_NitSede;
+    @FXML private TextField txt_NombreSede;
+    @FXML private TextField txt_DvSede;
 
     @FXML private CheckBox Hg;
     @FXML private CheckBox Wp;
-//CHECKBOX
-
     @FXML private Button btn_ActualizarCc;
     @FXML private Button btn_ActualizarClase;
     @FXML private Button btn_ActualizarSClase;
@@ -137,9 +148,7 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     @FXML private Button btn_EliminarSClase;
     @FXML private Button btn_EliminarTpCosto;
     @FXML private Button btn_Logout;
-
     @FXML private Button btn_paises;//BOTONES
-
     @FXML private MenuItem btn_Documentacion_Actas;
     @FXML private MenuItem btn_Documentacion_CartaLaboral;
     @FXML private MenuItem btn_Documentacion_Contrato;
@@ -161,12 +170,11 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     @FXML private MenuItem btn_Parametros_Tercero;
     @FXML private MenuItem btn_Procesos_Calcular;
     @FXML private MenuItem btn_Reportes_Desprendible;
+
+     //MENU ITEM
     @FXML private MenuItem btn_Reportes_Nomina;
     @FXML private MenuItem btn_Reportes_SegSocial;
     @FXML private Menu btn_inicioUno;
-
-     //MENU ITEM
-
     @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_CBarDr;
     @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_BarEmpr;
     @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_CCiuDr;
@@ -210,11 +218,10 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     @FXML private ComboBox<?> cbox_TpCta;
     @FXML private ComboBox<?> cbox_TpSal;
     @FXML private ComboBox<?> cbox_TpVinc;
+     //COMBO BOX
     @FXML private ComboBox<?> cbox_TpVlr;
     @FXML private ComboBox<?> cbox_anioCc;
     @FXML private ComboBox<CodigosDAO> cbox_CodEmp;
-     //COMBO BOX
-
     @FXML private TableColumn<?, ?> colCsc;
     @FXML private TableColumn<?, ?> colDoc;
     @FXML private TableColumn<?, ?> col_CodCc;
@@ -229,14 +236,12 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     @FXML private TableColumn<?, ?> col_NomCc;
     @FXML private TableColumn<?, ?> col_NomClase;
     @FXML private TableColumn<?, ?> col_NomSClase;
+     //COLUMNAS TABLEVIEW
     @FXML private TableColumn<?, ?> col_NomTpCosto;
     @FXML private TableColumn<?, ?> col_SClaseAs;
     @FXML private TableColumn<?, ?> col_anioCc;
-     //COLUMNAS TABLEVIEW
-
     @FXML private DatePicker date_FchIng;
     @FXML private DatePicker date_FchNac; //DATEPICKER
-
     @FXML private AnchorPane panel_Parametro_Tercero;
     @FXML private AnchorPane panel_Turnos;
     @FXML private AnchorPane panel_Empleados_Creacion;
@@ -246,7 +251,6 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     @FXML private AnchorPane panel_Parametro_Costo;
     @FXML private AnchorPane panel_Parametro_Regimen;
     @FXML private AnchorPane panelcontenedor; //ANCHORPANE
-
     @FXML private TableView<?> tblEmpleados;
     @FXML private TableView<?> tbl_CCosto;
     @FXML private TableView<?> tbl_Clase;
@@ -263,18 +267,13 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     @FXML private TableColumn<DatosTablasDAO, String> col_NitEmpresa;
     @FXML private TableColumn<DatosTablasDAO, String> col_NombreEmpresa;
     @FXML private TableColumn<DatosTablasDAO, String> col_NomEmpSede;
+    @FXML private TableColumn<DatosTablasDAO, String> col_CodSede;
     @FXML private TableColumn<DatosTablasDAO, String> col_NomSede;
     @FXML private TableColumn<DatosTablasDAO, String> col_EstSede;
-
     @FXML private TableView<?> tbl_TpRegFis; //TABLEVIEW
-
-
-    private static Object eleccion;
     @FXML private Label label_user;
     private Image imagen;
     @FXML private ImageView img_Empleado;
-    public static String path;
-    public static String elementodeevento;
     private String idevento;
 
 
@@ -866,7 +865,9 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
      * Deben estar enlazadas a un procedimiento que permita llamar los datos de la base de datos
      */
     public void configurarColumnasTablas(){
+
         /**
+         * El valor dentro de PropertyValueFactory es el correspondiente a la variable del constructor DatosTablasDAO
          * configuracion de la tabla de las empresas
          */
         col_NitEmpresa.setCellValueFactory(new PropertyValueFactory<>("nitempresa"));
@@ -875,10 +876,47 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
         /**
          *Configuración de las columnas de las Sedes
          */
-        col_NomEmpSede.setCellValueFactory(new PropertyValueFactory<>("empresasede"));
+        col_CodSede.setCellValueFactory(new PropertyValueFactory<>("codigosede"));
+        col_NomEmpSede.setCellValueFactory(new PropertyValueFactory<>("nombreempresa"));
         col_NomSede.setCellValueFactory(new PropertyValueFactory<>("nombresede"));
         col_EstSede.setCellValueFactory(new PropertyValueFactory<>("estadosede"));
+    }
+
+
+    public void eliminarSedes(ActionEvent event) throws SQLException {
+        String codSede = txt_CodSede.getText();
+        DatosTablasDAO eliminar = new DatosTablasDAO(codSede);
+        try {
+            eliminar.eliminarSede(codSede); // se eliminará el registro con codigosede escrito en txt_CodSede
+        } catch (SQLException e) {
+            System.out.println("Ha ocurrido un error al intentar eliminar el registro: " + e.getMessage());
+        }
+    }
+
+    public void agregarSedes(ActionEvent event) {
 
     }
+
+    @FXML void itemseleccionado(MouseEvent event){
+        String codigosede = tbl_Sedes.getSelectionModel().getSelectedItem().getCodigoSede();
+        //System.out.println(codigosede);
+        RellenarTablas datossede = new RellenarTablas();
+        List<DatosTablasDAO> datos = datossede.datosedes(codigosede);
+        //System.out.println("Estos son los datos de las sedes: "+datos);
+        //txt_CodSede.setText(datos.get(0).getCodigosede());
+        DatosTablasDAO datosSede = datos.get(0);
+        txt_NombreEmpresa.setText(datosSede.getEmpresasede());
+        txt_NitEmpresa.setText(datosSede.getNitempresa());
+        txt_DvEmpresa.setText(datosSede.getDvempresa());
+        txt_CodSede.setText(datosSede.getCodigosede());
+        txt_NombreSede.setText(datosSede.getNombresede());
+        txt_NitSede.setText(datosSede.getNombresede());
+        txt_DvSede.setText(datosSede.getDvsede());
+
+
+
+
+    }
+
 
 }
