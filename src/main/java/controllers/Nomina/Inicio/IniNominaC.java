@@ -42,8 +42,6 @@ import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.List;
@@ -912,7 +910,7 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
         txt_NombreSede.setText(datosSede.getNombresede());
         txt_NitSede.setText(datosSede.getNombresede());
         txt_DvSede.setText(datosSede.getDvsede());
-
+//Seguir agregando los demas campos
 
 
 

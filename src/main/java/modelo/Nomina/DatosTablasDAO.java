@@ -44,10 +44,11 @@ public class DatosTablasDAO {
     private String dvsede;
     private String dvempresa;
     private String nitsede;
+    private String nompais;
+    private String nomdepto;
+    private String nommuni;
 
 
-    public DatosTablasDAO(String codSede) {
-    }
 
     public DatosTablasDAO(String codigosede, String nomSede, String empresasede, String descEstGen) {
         this.codigosede=codigosede;
@@ -56,18 +57,27 @@ public class DatosTablasDAO {
         this.estadosede=descEstGen;
     }
 
-    public DatosTablasDAO(String codEmp, String codSede, String nomSede, String idpaises, String codDepto,
-                          String codMun, String direc, String telef, String celCont, String celWApp,
+    public DatosTablasDAO(String codEmp, String nombreempresa, String nitempresa, String dvempresa, String codSede,
+                          String nomSede, String nitSede, String dvSede,  String idpaises,String nompais, String codDepto,
+                          String nomdepto, String codMun, String nommuni, String direc, String telef, String celCont, String celWApp,
                           int lunes, int martes, int miercoles, int jueves,
                           int viernes, int sabado, int domingo, int hrsLab, Time hrIng,
                           Time hrEgr, Time hrIniDs, Time hrFinDs, int hrsLabEnfe, int hrsSemEnf,
                           int hrsMesEnf, String descEstGen) {
         this.codigoempresa=codEmp;
+        this.nombreempresa=nombreempresa;
+        this.nitempresa=nitempresa;
+        this.dvempresa=dvempresa;
         this.codigosede=codSede;
         this.nombresede=nomSede;
+        this.nitsede=nitSede;
+        this.dvsede=dvSede;
         this.codpais=idpaises;
+        this.nompais=nompais;
         this.CodDepto=codDepto;
+        this.nomdepto=nomdepto;
         this.CodMun=codMun;
+        this.nommuni=nommuni;
         this.Direc=direc;
         this.Telef=telef;
         this.CelCont=celCont;
@@ -139,10 +149,15 @@ public class DatosTablasDAO {
         this.EstCodGen = estCodGen;
     }
 
+    public DatosTablasDAO(String codSede) {
+        this.codigosede=codSede;
+    }
+
     @Override
     public String toString() {
         return "DatosTablasDAO{" +
-                "nitempresa='" + nitempresa + '\'' +
+                "codigoempresa='" + codigoempresa + '\'' +
+                ", nitempresa='" + nitempresa + '\'' +
                 ", empresasede='" + empresasede + '\'' +
                 ", nombreempresa='" + nombreempresa + '\'' +
                 ", estadoempresa='" + estadoempresa + '\'' +
@@ -172,6 +187,13 @@ public class DatosTablasDAO {
                 ", HrsSemEnf=" + HrsSemEnf +
                 ", HrsMesEnf=" + HrsMesEnf +
                 ", EstCodGen='" + EstCodGen + '\'' +
+                ", estado='" + estado + '\'' +
+                ", dvsede='" + dvsede + '\'' +
+                ", dvempresa='" + dvempresa + '\'' +
+                ", nitsede='" + nitsede + '\'' +
+                ", nompais='" + nompais + '\'' +
+                ", nomdepto='" + nomdepto + '\'' +
+                ", nommuni='" + nommuni + '\'' +
                 '}';
     }
 
