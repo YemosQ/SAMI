@@ -210,6 +210,7 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     @FXML private ComboBox<?> cbox_EstTpContri;
     @FXML private ComboBox<?> cbox_EstTpCosto;
     @FXML private ComboBox<?> cbox_EstTpPerso;
+    @FXML private ComboBox<CodigosDAO> cbox_CodEmp;
     @FXML private ComboBox<?> cbox_Sede;
     @FXML private ComboBox<?> cbox_TpCont;
     @FXML private ComboBox<?> cbox_TpCost;
@@ -219,7 +220,6 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
      //COMBO BOX
     @FXML private ComboBox<?> cbox_TpVlr;
     @FXML private ComboBox<?> cbox_anioCc;
-    @FXML private ComboBox<CodigosDAO> cbox_CodEmp;
     @FXML private TableColumn<?, ?> colCsc;
     @FXML private TableColumn<?, ?> colDoc;
     @FXML private TableColumn<?, ?> col_CodCc;
@@ -896,19 +896,21 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     }
 
     @FXML void itemseleccionado(MouseEvent event){
+
         String codigosede = tbl_Sedes.getSelectionModel().getSelectedItem().getCodigoSede();
         //System.out.println(codigosede);
         RellenarTablas datossede = new RellenarTablas();
         List<DatosTablasDAO> datos = datossede.datosedes(codigosede);
-        //System.out.println("Estos son los datos de las sedes: "+datos);
-        //txt_CodSede.setText(datos.get(0).getCodigosede());
         DatosTablasDAO datosSede = datos.get(0);
+        cbox_CodEmp.setValue(null);
+        cbox_CodEmp.setPromptText(null);
+        cbox_CodEmp.setPromptText(datosSede.getCodigoempresa());
         txt_NombreEmpresa.setText(datosSede.getEmpresasede());
         txt_NitEmpresa.setText(datosSede.getNitempresa());
         txt_DvEmpresa.setText(datosSede.getDvempresa());
         txt_CodSede.setText(datosSede.getCodigosede());
         txt_NombreSede.setText(datosSede.getNombresede());
-        txt_NitSede.setText(datosSede.getNombresede());
+        txt_NitSede.setText(datosSede.getNitsede());
         txt_DvSede.setText(datosSede.getDvsede());
 //Seguir agregando los demas campos
 

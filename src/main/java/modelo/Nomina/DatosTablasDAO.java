@@ -39,7 +39,7 @@ public class DatosTablasDAO {
     private Integer HrsLabEnfe;
     private Integer HrsSemEnf;
     private Integer HrsMesEnf;
-    private String EstCodGen;
+    private String codigoestado;
     private String estado;
     private String dvsede;
     private String dvempresa;
@@ -59,13 +59,12 @@ public class DatosTablasDAO {
 
     public DatosTablasDAO(String codEmp, String nombreempresa, String nitempresa, String dvempresa, String codSede,
                           String nomSede, String nitSede, String dvSede,  String idpaises,String nompais, String codDepto,
-                          String nomdepto, String codMun, String nommuni, String direc, String telef, String celCont, String celWApp,
-                          int lunes, int martes, int miercoles, int jueves,
-                          int viernes, int sabado, int domingo, int hrsLab, Time hrIng,
-                          Time hrEgr, Time hrIniDs, Time hrFinDs, int hrsLabEnfe, int hrsSemEnf,
-                          int hrsMesEnf, String descEstGen) {
+                          String nomdepto, String codMun, String nommuni, String direc, String telef, String celCont,
+                          String celWApp, int lunes, int martes, int miercoles, int jueves, int viernes, int sabado,
+                          int domingo, int hrsLab, Time hrIng, Time hrEgr, Time hrIniDs, Time hrFinDs,
+                          int hrsLabEnfe, int hrsSemEnf, int hrsMesEnf, String EstCodGen, String descEstGen) {
         this.codigoempresa=codEmp;
-        this.nombreempresa=nombreempresa;
+        this.empresasede=nombreempresa;
         this.nitempresa=nitempresa;
         this.dvempresa=dvempresa;
         this.codigosede=codSede;
@@ -97,7 +96,8 @@ public class DatosTablasDAO {
         this.HrsLabEnfe=hrsLabEnfe;
         this.HrsSemEnf=hrsSemEnf;
         this.HrsMesEnf=hrsMesEnf;
-        this.estado=descEstGen;
+        this.codigoestado=EstCodGen;
+        this.estadosede=descEstGen;
     }
 
     public DatosTablasDAO(String nitempresa, String nombreempresa, String estadoempresa) {
@@ -146,7 +146,7 @@ public class DatosTablasDAO {
         this.HrsLabEnfe = hrsLabEnfe;
         this.HrsSemEnf = hrsSemEnf;
         this.HrsMesEnf = hrsMesEnf;
-        this.EstCodGen = estCodGen;
+        this.codigoestado = estCodGen;
     }
 
     public DatosTablasDAO(String codSede) {
@@ -186,7 +186,7 @@ public class DatosTablasDAO {
                 ", HrsLabEnfe=" + HrsLabEnfe +
                 ", HrsSemEnf=" + HrsSemEnf +
                 ", HrsMesEnf=" + HrsMesEnf +
-                ", EstCodGen='" + EstCodGen + '\'' +
+                ", codigoestado=" + codigoestado +
                 ", estado='" + estado + '\'' +
                 ", dvsede='" + dvsede + '\'' +
                 ", dvempresa='" + dvempresa + '\'' +
@@ -213,6 +213,14 @@ public class DatosTablasDAO {
         this.codpais = codpais;
     }
 
+    public String getCodigoestado() {
+        return codigoestado;
+    }
+
+    public void setCodigoestado(String codigoestado) {
+        this.codigoestado = codigoestado;
+    }
+
     public String getCodigoempresa() {
         return codigoempresa;
     }
@@ -227,6 +235,30 @@ public class DatosTablasDAO {
 
     public int getMartes() {
         return Martes;
+    }
+
+    public String getNompais() {
+        return nompais;
+    }
+
+    public void setNompais(String nompais) {
+        this.nompais = nompais;
+    }
+
+    public String getNomdepto() {
+        return nomdepto;
+    }
+
+    public void setNomdepto(String nomdepto) {
+        this.nomdepto = nomdepto;
+    }
+
+    public String getNommuni() {
+        return nommuni;
+    }
+
+    public void setNommuni(String nommuni) {
+        this.nommuni = nommuni;
     }
 
     public int getMiercoles() {
@@ -426,11 +458,11 @@ public class DatosTablasDAO {
     }
 
     public String getEstCodGen() {
-        return EstCodGen;
+        return codigoestado;
     }
 
     public void setEstCodGen(String estCodGen) {
-        EstCodGen = estCodGen;
+        codigoestado = estCodGen;
     }
 
     public String getNitempresa() {
