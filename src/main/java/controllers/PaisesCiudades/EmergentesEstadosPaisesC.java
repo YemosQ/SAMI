@@ -15,7 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import modelo.Nomina.EmergenteEstadosPaisesDAO;
+import modelo.Nomina.UbicacionesDAO;
 import javafx.scene.control.TextField;
 import util.*;
 
@@ -30,18 +30,18 @@ public class EmergentesEstadosPaisesC implements Initializable, MoverPanel.Dragg
 
 //Declaración de atributos para la ventana de Paises, Departamentos y Ciudades
 
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_PaisAs;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_DeptoAs;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_DeptoAsBr;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_MunicAsBr;//Variables de ComboBox Ventana X
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_EstDepto;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_EstMcpio;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_EstBarrio;
+    @FXML private ComboBox<UbicacionesDAO> cbox_PaisAs;
+    @FXML private ComboBox<UbicacionesDAO> cbox_DeptoAs;
+    @FXML private ComboBox<UbicacionesDAO> cbox_DeptoAsBr;
+    @FXML private ComboBox<UbicacionesDAO> cbox_MunicAsBr;//Variables de ComboBox Ventana X
+    @FXML private ComboBox<UbicacionesDAO> cbox_EstDepto;
+    @FXML private ComboBox<UbicacionesDAO> cbox_EstMcpio;
+    @FXML private ComboBox<UbicacionesDAO> cbox_EstBarrio;
 
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_Est;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_EstPob;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_EstPais;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_EstSex;
+    @FXML private ComboBox<UbicacionesDAO> cbox_Est;
+    @FXML private ComboBox<UbicacionesDAO> cbox_EstPob;
+    @FXML private ComboBox<UbicacionesDAO> cbox_EstPais;
+    @FXML private ComboBox<UbicacionesDAO> cbox_EstSex;
      //COMBOBOX Estados Ventana Paises, Departamentos y Municipios
 
     @FXML private Button btn_Cerrar;
@@ -114,34 +114,34 @@ public class EmergentesEstadosPaisesC implements Initializable, MoverPanel.Dragg
      //BOTONES Ventana Paises, Departamentos y Municipios
 
     @FXML private TableColumn<?, ?> col_DeptoAs;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_ConsolBarrio;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_idDepto;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_idMcpio;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_idPais;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_ConsolDepto;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_ConsolMcpio;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_ConsolPais;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_EstConsol;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_EstDepto;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_EstMcpio;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_EstPais;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_NomDepto;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_NomMcpio;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_NomPais;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_idBarrio;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_NomBarrio;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_EstBarrio;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_DeptoCPais;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_DeptoAsBr;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_MunicAsBr;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, Integer> col_CodEst;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_DescEst;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, Integer> col_CodSex;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_DescSex;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, Integer> col_CodPobla;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_DescPobla;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_EstPobla;
-    @FXML private TableColumn<EmergenteEstadosPaisesDAO, String> col_EstSex;
+    @FXML private TableColumn<UbicacionesDAO, String> col_ConsolBarrio;
+    @FXML private TableColumn<UbicacionesDAO, String> col_idDepto;
+    @FXML private TableColumn<UbicacionesDAO, String> col_idMcpio;
+    @FXML private TableColumn<UbicacionesDAO, String> col_idPais;
+    @FXML private TableColumn<UbicacionesDAO, String> col_ConsolDepto;
+    @FXML private TableColumn<UbicacionesDAO, String> col_ConsolMcpio;
+    @FXML private TableColumn<UbicacionesDAO, String> col_ConsolPais;
+    @FXML private TableColumn<UbicacionesDAO, String> col_EstConsol;
+    @FXML private TableColumn<UbicacionesDAO, String> col_EstDepto;
+    @FXML private TableColumn<UbicacionesDAO, String> col_EstMcpio;
+    @FXML private TableColumn<UbicacionesDAO, String> col_EstPais;
+    @FXML private TableColumn<UbicacionesDAO, String> col_NomDepto;
+    @FXML private TableColumn<UbicacionesDAO, String> col_NomMcpio;
+    @FXML private TableColumn<UbicacionesDAO, String> col_NomPais;
+    @FXML private TableColumn<UbicacionesDAO, String> col_idBarrio;
+    @FXML private TableColumn<UbicacionesDAO, String> col_NomBarrio;
+    @FXML private TableColumn<UbicacionesDAO, String> col_EstBarrio;
+    @FXML private TableColumn<UbicacionesDAO, String> col_DeptoCPais;
+    @FXML private TableColumn<UbicacionesDAO, String> col_DeptoAsBr;
+    @FXML private TableColumn<UbicacionesDAO, String> col_MunicAsBr;
+    @FXML private TableColumn<UbicacionesDAO, Integer> col_CodEst;
+    @FXML private TableColumn<UbicacionesDAO, String> col_DescEst;
+    @FXML private TableColumn<UbicacionesDAO, Integer> col_CodSex;
+    @FXML private TableColumn<UbicacionesDAO, String> col_DescSex;
+    @FXML private TableColumn<UbicacionesDAO, Integer> col_CodPobla;
+    @FXML private TableColumn<UbicacionesDAO, String> col_DescPobla;
+    @FXML private TableColumn<UbicacionesDAO, String> col_EstPobla;
+    @FXML private TableColumn<UbicacionesDAO, String> col_EstSex;
     //Atributos de COLUMN TABLEVIEW
 
     @FXML private AnchorPane panelEmergente;
@@ -154,13 +154,13 @@ public class EmergentesEstadosPaisesC implements Initializable, MoverPanel.Dragg
     @FXML private AnchorPane panel_paises;
      //ANCHORPANE
 
-    @FXML private TableView<EmergenteEstadosPaisesDAO> tbl_Depto;
-    @FXML private TableView<EmergenteEstadosPaisesDAO> tbl_Mcpio;
-    @FXML private TableView<EmergenteEstadosPaisesDAO> tbl_Pais;
-    @FXML private TableView<EmergenteEstadosPaisesDAO> tbl_Estados;
-    @FXML private TableView<EmergenteEstadosPaisesDAO> tbl_Sexo;
-    @FXML private TableView<EmergenteEstadosPaisesDAO> tbl_Pobla;
-    @FXML private TableView<EmergenteEstadosPaisesDAO> tbl_Barrios;
+    @FXML private TableView<UbicacionesDAO> tbl_Depto;
+    @FXML private TableView<UbicacionesDAO> tbl_Mcpio;
+    @FXML private TableView<UbicacionesDAO> tbl_Pais;
+    @FXML private TableView<UbicacionesDAO> tbl_Estados;
+    @FXML private TableView<UbicacionesDAO> tbl_Sexo;
+    @FXML private TableView<UbicacionesDAO> tbl_Pobla;
+    @FXML private TableView<UbicacionesDAO> tbl_Barrios;
      //Atributos de TABLEVIEW
 
     @FXML private TextField txt_idDepto;
@@ -186,9 +186,9 @@ public class EmergentesEstadosPaisesC implements Initializable, MoverPanel.Dragg
     @FXML private Label label_Mod_Nombre_Emergente;
      //LABEL
 
-    public ObservableList<EmergenteEstadosPaisesDAO> estados = FXCollections.observableArrayList();
-    public ObservableList<EmergenteEstadosPaisesDAO> sexo = FXCollections.observableArrayList();
-    public ObservableList<EmergenteEstadosPaisesDAO> poblacion = FXCollections.observableArrayList();
+    public ObservableList<UbicacionesDAO> estados = FXCollections.observableArrayList();
+    public ObservableList<UbicacionesDAO> sexo = FXCollections.observableArrayList();
+    public ObservableList<UbicacionesDAO> poblacion = FXCollections.observableArrayList();
     //OBSERVABLE LIST
 
     private Connection con;
@@ -243,21 +243,21 @@ public class EmergentesEstadosPaisesC implements Initializable, MoverPanel.Dragg
         Object listD = Paislista.listaDeptos();
         Object listM = Paislista.listaMuni();
         Object listB = Paislista.listaBarrios();
-        cbox_EstPais.getItems().addAll((Collection<? extends EmergenteEstadosPaisesDAO>) list);
+        cbox_EstPais.getItems().addAll((Collection<? extends UbicacionesDAO>) list);
         cbox_EstPais.setConverter(new ConverterStringEstados());
-        cbox_PaisAs.getItems().addAll((Collection<? extends EmergenteEstadosPaisesDAO>) listP);
+        cbox_PaisAs.getItems().addAll((Collection<? extends UbicacionesDAO>) listP);
         cbox_PaisAs.setConverter(new ConverterStringIdPaises());
-        cbox_EstDepto.getItems().addAll((Collection<? extends EmergenteEstadosPaisesDAO>) list);
+        cbox_EstDepto.getItems().addAll((Collection<? extends UbicacionesDAO>) list);
         cbox_EstDepto.setConverter(new ConverterStringEstados());
-        cbox_DeptoAs.getItems().addAll((Collection<? extends EmergenteEstadosPaisesDAO>) listD);
+        cbox_DeptoAs.getItems().addAll((Collection<? extends UbicacionesDAO>) listD);
         cbox_DeptoAs.setConverter(new ConverterStringIdDepto());
-        cbox_DeptoAsBr.getItems().addAll((Collection<? extends EmergenteEstadosPaisesDAO>) listD);
+        cbox_DeptoAsBr.getItems().addAll((Collection<? extends UbicacionesDAO>) listD);
         cbox_DeptoAsBr.setConverter(new ConverterStringIdDepto());
-        cbox_EstMcpio.getItems().addAll((Collection<? extends EmergenteEstadosPaisesDAO>) list);
+        cbox_EstMcpio.getItems().addAll((Collection<? extends UbicacionesDAO>) list);
         cbox_EstMcpio.setConverter(new ConverterStringEstados());
-        cbox_MunicAsBr.getItems().addAll((Collection<? extends EmergenteEstadosPaisesDAO>) listM);
+        cbox_MunicAsBr.getItems().addAll((Collection<? extends UbicacionesDAO>) listM);
         cbox_MunicAsBr.setConverter(new ConverterStringIdMunic());
-        cbox_EstBarrio.getItems().addAll((Collection<? extends EmergenteEstadosPaisesDAO>) list);
+        cbox_EstBarrio.getItems().addAll((Collection<? extends UbicacionesDAO>) list);
         cbox_EstBarrio.setConverter(new ConverterStringEstados());
     }
 
@@ -308,41 +308,41 @@ public class EmergentesEstadosPaisesC implements Initializable, MoverPanel.Dragg
         PaisDeptoMuni paises = new PaisDeptoMuni();
         Object listPaises=paises.listaPaises();
         //JOptionPane.showMessageDialog(null,"Volviendo de Paises con valor: "+listPaises);
-        tbl_Pais.setItems((ObservableList<EmergenteEstadosPaisesDAO>) listPaises);
+        tbl_Pais.setItems((ObservableList<UbicacionesDAO>) listPaises);
     }
     public void cargarDatosDepto(){
         //JOptionPane.showMessageDialog(null,"Dentro de CargarDatosDepto");
         PaisDeptoMuni depto = new PaisDeptoMuni();
         Object listDepto=depto.listaDeptos();
         //JOptionPane.showMessageDialog(null,"Volviendo de Paises con valor: "+listDepto);
-        tbl_Depto.setItems((ObservableList<EmergenteEstadosPaisesDAO>) listDepto);
+        tbl_Depto.setItems((ObservableList<UbicacionesDAO>) listDepto);
     }
     public void cargarDatosMuni(){
         //JOptionPane.showMessageDialog(null,"Dentro de CargarDatosMunic");
         PaisDeptoMuni munic = new PaisDeptoMuni();
         Object listMunic=munic.listaMuni();
         //JOptionPane.showMessageDialog(null,"Volviendo de municipio con valor: "+listMunic);
-        tbl_Mcpio.setItems((ObservableList<EmergenteEstadosPaisesDAO>) listMunic);
+        tbl_Mcpio.setItems((ObservableList<UbicacionesDAO>) listMunic);
     }
     public void cargarDatosBarrio(){
         PaisDeptoMuni barrios = new PaisDeptoMuni();
         Object listBarrio=barrios.listaBarrios();
-        tbl_Barrios.setItems((ObservableList<EmergenteEstadosPaisesDAO>) listBarrio);
+        tbl_Barrios.setItems((ObservableList<UbicacionesDAO>) listBarrio);
     }
     public void cargarDatosEst() {
         EstSexPob estados= new EstSexPob();
         Object listaestados=estados.listaEstados();
-        tbl_Estados.setItems((ObservableList<EmergenteEstadosPaisesDAO>) listaestados);
+        tbl_Estados.setItems((ObservableList<UbicacionesDAO>) listaestados);
     }
     public void cargarDatosSex() {
         EstSexPob sexo= new EstSexPob();
         Object listasexo=sexo.listaSexo();
-        tbl_Sexo.setItems((ObservableList<EmergenteEstadosPaisesDAO>) listasexo);
+        tbl_Sexo.setItems((ObservableList<UbicacionesDAO>) listasexo);
     }
     public void cargarDatosPobla() {
         EstSexPob pobla= new EstSexPob();
         Object listapobla=pobla.listaPobla();
-        tbl_Pobla.setItems((ObservableList<EmergenteEstadosPaisesDAO>) listapobla);
+        tbl_Pobla.setItems((ObservableList<UbicacionesDAO>) listapobla);
     }
 
 

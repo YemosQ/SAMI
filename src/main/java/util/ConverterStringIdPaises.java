@@ -1,15 +1,14 @@
 package util;
 
 import javafx.util.StringConverter;
-import modelo.Nomina.EmergenteEstadosPaisesDAO;
-import modelo.Nomina.PaisesDAO;
+import modelo.Nomina.UbicacionesDAO;
 
-public class ConverterStringIdPaises extends StringConverter<EmergenteEstadosPaisesDAO> {
+public class ConverterStringIdPaises extends StringConverter<UbicacionesDAO> {
 
     @Override
-    public String toString(EmergenteEstadosPaisesDAO paises) {return paises == null ? null : paises.getIdpais();}
+    public String toString(UbicacionesDAO paises) {return paises == null ? null : paises.getIdpais();}
     @Override
-    public EmergenteEstadosPaisesDAO fromString(String s) {
+    public UbicacionesDAO fromString(String s) {
         return null;
     }
 }

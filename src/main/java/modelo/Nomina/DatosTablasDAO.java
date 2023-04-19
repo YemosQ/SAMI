@@ -544,28 +544,4 @@ public class DatosTablasDAO {
     public void setEstadosede(String estadosede) {
         this.estadosede = estadosede;
     }
-
-    public void eliminarSede(String codigoSede) throws SQLException {
-        Conexion conexion = new Conexion();
-        Connection con = null;
-        con = conexion.conectar();
-        try {
-            String sql = "DELETE FROM sami.tb_sede WHERE id = ?";
-            PreparedStatement declaracion = con.prepareStatement(sql);
-            declaracion.setString(1, codigoSede);
-            int filasEliminadas = declaracion.executeUpdate();
-            if (filasEliminadas > 0) {
-                System.out.println("El registro ha sido eliminado correctamente.");
-            } else {
-                System.out.println("No se ha eliminado ningún registro.");
-            }
-        } catch (SQLException ex) {
-            System.out.println("Ha ocurrido un error al intentar eliminar el registro: " + ex.getMessage());
-        } finally {
-            if (con != null) {
-                con.close();
-            }
-        }
-    }
-
 }

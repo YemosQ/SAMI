@@ -1,17 +1,16 @@
 package util;
 
 import javafx.util.StringConverter;
-import modelo.Nomina.EmergenteEstadosPaisesDAO;
-import modelo.Nomina.EstadosDAO;
+import modelo.Nomina.UbicacionesDAO;
 
-public class ConverterStringEstados extends StringConverter<EmergenteEstadosPaisesDAO> {
+public class ConverterStringEstados extends StringConverter<UbicacionesDAO> {
 
     @Override
-    public String toString(EmergenteEstadosPaisesDAO estados) {
+    public String toString(UbicacionesDAO estados) {
         return estados == null ? null : estados.getDescripcionEstado();
     }
     @Override
-    public EmergenteEstadosPaisesDAO fromString(String s) {
+    public UbicacionesDAO fromString(String s) {
         return null;
     }
 }

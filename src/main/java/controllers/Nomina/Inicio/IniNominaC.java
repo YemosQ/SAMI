@@ -31,9 +31,10 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.StringConverter;
 import modelo.Nomina.CodigosDAO;
 import modelo.Nomina.DatosTablasDAO;
-import modelo.Nomina.EmergenteEstadosPaisesDAO;
+import modelo.Nomina.UbicacionesDAO;
 import util.*;
 import util.convertidores.ConverterStringCodEmp;
 import util.convertidores.ConverterStringCodEmp2;
@@ -42,11 +43,7 @@ import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
-import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
 
 
 public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
@@ -173,20 +170,20 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     @FXML private MenuItem btn_Reportes_Nomina;
     @FXML private MenuItem btn_Reportes_SegSocial;
     @FXML private Menu btn_inicioUno;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_CBarDr;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_BarEmpr;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_CCiuDr;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_CCiuNa;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_CDepDr;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_CDepNa;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_CPaiNa;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_CPobNa;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_EstEmpr;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_PaisEmpr;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_DptoEmpr;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_MunEmpr;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_PaisDr;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_SexNa;
+    @FXML private ComboBox<UbicacionesDAO> cbox_CBarDr;
+    @FXML private ComboBox<UbicacionesDAO> cbox_BarEmpr;
+    @FXML private ComboBox<UbicacionesDAO> cbox_CCiuDr;
+    @FXML private ComboBox<UbicacionesDAO> cbox_CCiuNa;
+    @FXML private ComboBox<UbicacionesDAO> cbox_CDepDr;
+    @FXML private ComboBox<UbicacionesDAO> cbox_CDepNa;
+    @FXML private ComboBox<UbicacionesDAO> cbox_CPaiNa;
+    @FXML private ComboBox<UbicacionesDAO> cbox_CPobNa;
+    @FXML private ComboBox<UbicacionesDAO> cbox_EstEmpr;
+    @FXML private ComboBox<UbicacionesDAO> cbox_PaisEmpr;
+    @FXML private ComboBox<UbicacionesDAO> cbox_DptoEmpr;
+    @FXML private ComboBox<UbicacionesDAO> cbox_MunEmpr;
+    @FXML private ComboBox<UbicacionesDAO> cbox_PaisDr;
+    @FXML private ComboBox<UbicacionesDAO> cbox_SexNa;
     @FXML private ComboBox<?> cbox_CoArea;
     @FXML private ComboBox<?> cbox_CoCarg;
     @FXML private ComboBox<?> cbox_CoCencost;
@@ -211,12 +208,21 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     @FXML private ComboBox<?> cbox_EstTpCosto;
     @FXML private ComboBox<?> cbox_EstTpPerso;
     @FXML private ComboBox<CodigosDAO> cbox_CodEmp;
+    @FXML private ComboBox<UbicacionesDAO> cbox_PaisSede;
+    @FXML private ComboBox<UbicacionesDAO> cbox_DeptoSede;
+    @FXML private ComboBox<UbicacionesDAO> cbox_MuniSede;
+    @FXML private ComboBox<UbicacionesDAO> cbox_BarSede;
+    @FXML private ComboBox<UbicacionesDAO> cbox_EstadoSede;
+    @FXML private ComboBox<Puc> cbox_PucSede;
+
     @FXML private ComboBox<?> cbox_Sede;
     @FXML private ComboBox<?> cbox_TpCont;
     @FXML private ComboBox<?> cbox_TpCost;
     @FXML private ComboBox<?> cbox_TpCta;
     @FXML private ComboBox<?> cbox_TpSal;
     @FXML private ComboBox<?> cbox_TpVinc;
+    @FXML private ComboBox<Moneda> cbox_MonSede;
+    @FXML private ComboBox<DocumentoIdentidad> cbox_DocRLSede;
      //COMBO BOX
     @FXML private ComboBox<?> cbox_TpVlr;
     @FXML private ComboBox<?> cbox_anioCc;
@@ -504,7 +510,7 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
         //System.out.println("Sex1");
         Object list = listaSex.listaSexo();
         //System.out.println("Sex2: "+list);
-        cbox_SexNa.getItems().addAll((Collection<? extends EmergenteEstadosPaisesDAO>) list);
+        cbox_SexNa.getItems().addAll((Collection<? extends UbicacionesDAO>) list);
         cbox_SexNa.setConverter(new ConverterStringSexo());
     }
     public void listaPob() {
@@ -512,7 +518,7 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
         cbox_CPobNa.getItems().clear();
         EstSexPob listaPob =  new  EstSexPob();
         Object list = listaPob.listaPobla();
-        cbox_CPobNa.getItems().addAll((Collection<? extends EmergenteEstadosPaisesDAO>) list);
+        cbox_CPobNa.getItems().addAll((Collection<? extends UbicacionesDAO>) list);
         cbox_CPobNa.setConverter(new ConverterStringEstados());
     }
     public void listaPais(MouseEvent event) {
@@ -524,75 +530,105 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
                 cbox_CCiuNa.getItems().clear();
                 cbox_CDepNa.getItems().clear();
                 PaisDeptoMuni listaPais =  new PaisDeptoMuni();
-                List<EmergenteEstadosPaisesDAO> paises = listaPais.listaPaises();
+                List<UbicacionesDAO> paises = listaPais.listaPaises();
                 cbox_CPaiNa.getItems().addAll(paises);
-                cbox_CPaiNa.setConverter(new ConverterStringPaises());
+                cbox_CPaiNa.setConverter(new ConverterStringUbicaciones());
             }else if(cboxPais.getId().equals("cbox_PaisDr")) {
                 System.out.println("Entro al de Direccion");
                 cbox_CCiuDr.getItems().clear();
                 cbox_CDepDr.getItems().clear();
                 PaisDeptoMuni listaPais = new PaisDeptoMuni();
-                List<EmergenteEstadosPaisesDAO> paises = listaPais.listaPaises();
+                List<UbicacionesDAO> paises = listaPais.listaPaises();
                 cbox_PaisDr.getItems().addAll(paises);
-                cbox_PaisDr.setConverter(new ConverterStringPaises());
+                cbox_PaisDr.setConverter(new ConverterStringUbicaciones());
             }else if (cboxPais.getId().equals("cbox_PaisEmpr")){
                 System.out.println("Entro al de Empresa");
                 cbox_CCiuDr.getItems().clear();
                 cbox_CDepDr.getItems().clear();
                 PaisDeptoMuni listaPais = new PaisDeptoMuni();
-                List<EmergenteEstadosPaisesDAO> paises = listaPais.listaPaises();
+                List<UbicacionesDAO> paises = listaPais.listaPaises();
                 cbox_PaisEmpr.getItems().addAll(paises);
-                cbox_PaisEmpr.setConverter(new ConverterStringPaises());
+                cbox_PaisEmpr.setConverter(new ConverterStringUbicaciones());
+            }else if (cboxPais.getId().equals("cbox_PaisSede")){
+                System.out.println("Entro al de Sede");
+                cbox_DeptoSede.getItems().clear();
+                cbox_MuniSede.getItems().clear();
+                PaisDeptoMuni listaPais = new PaisDeptoMuni();
+                List<UbicacionesDAO> paises = listaPais.listaPaises();
+                cbox_PaisSede.getItems().addAll(paises);
+                cbox_PaisSede.setConverter(new ConverterStringUbicaciones());
             }
+
         }
     }
     @FXML void CargarDepto(MouseEvent event) {
         Object obj = event.getSource();
         if (obj instanceof ComboBox cboxDepto) {
             System.out.println("Entro al primer if ");
-            if (cboxDepto.getId().equals("cbox_CDepNa")){
+            if (cboxDepto.getId().equals("cbox_CDepNa")) {
                 System.out.println("Entro al de Nacimiento");
                 if (cbox_CPaiNa.getValue() != null) {
                     String idpais = cbox_CPaiNa.getValue().getIdpais();
                     cbox_CDepNa.getItems().clear();
                     cbox_CCiuNa.getItems().clear();
                     PaisDeptoMuni nombre = new PaisDeptoMuni();
-                    List<EmergenteEstadosPaisesDAO> DeptoDep = nombre.listaDeptosDep(idpais);
+                    List<UbicacionesDAO> DeptoDep = nombre.listaDeptosDep(idpais);
                     System.out.println("Volviendo");
                     cbox_CDepNa.getItems().addAll(DeptoDep);
-                    cbox_CDepNa.setConverter(new ConverterStringDepto());
-                }else{Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    cbox_CDepNa.setConverter(new ConverterStringUbicaciones());
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Seleccione el Pais");
                     alert.setHeaderText("Alerta Pais");
                     alert.setContentText("El pais esta vacio");
-                    alert.showAndWait();}
+                    alert.showAndWait();
+                }
             } else if (cboxDepto.getId().equals("cbox_CDepDr")) {
                 System.out.println("Entro al de la Direccion");
-                if (cbox_PaisDr.getValue() != null){
+                if (cbox_PaisDr.getValue() != null) {
                     String idpais = cbox_PaisDr.getValue().getIdpais();
                     cbox_CCiuDr.getItems().clear();
                     PaisDeptoMuni nombre = new PaisDeptoMuni();
-                    List<EmergenteEstadosPaisesDAO> DeptoDep = nombre.listaDeptosDep(idpais);
+                    List<UbicacionesDAO> DeptoDep = nombre.listaDeptosDep(idpais);
                     cbox_CDepDr.getItems().addAll(DeptoDep);
                     cbox_CDepDr.setConverter(new ConverterStringDepto());
-                }else{Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Seleccione el Pais");
                     alert.setHeaderText("Alerta Pais");
                     alert.setContentText("El pais esta vacio");
-                    alert.showAndWait();}
+                    alert.showAndWait();
+                }
             } else if (cboxDepto.getId().equals("cbox_DptoEmpr")) {
                 System.out.println("Entro al de la Empresa");
-                if (cbox_PaisEmpr.getValue() != null){
+                if (cbox_PaisEmpr.getValue() != null) {
                     String idpais = cbox_PaisEmpr.getValue().getIdpais();
                     PaisDeptoMuni nombre = new PaisDeptoMuni();
-                    List<EmergenteEstadosPaisesDAO> DeptoDep = nombre.listaDeptosDep(idpais);
+                    List<UbicacionesDAO> DeptoDep = nombre.listaDeptosDep(idpais);
                     cbox_DptoEmpr.getItems().addAll(DeptoDep);
-                    cbox_DptoEmpr.setConverter(new ConverterStringDepto());
-                }else{Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    cbox_DptoEmpr.setConverter(new ConverterStringUbicaciones());
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Seleccione el Pais");
                     alert.setHeaderText("Alerta Pais");
                     alert.setContentText("El pais esta vacio");
-                    alert.showAndWait();}
+                    alert.showAndWait();
+                }
+            } else if (cboxDepto.getId().equals("cbox_DeptoSede")) {
+                System.out.println("Entro al de la Sede");
+                if (cbox_PaisSede.getValue() != null) {
+                    String idpais = cbox_PaisSede.getValue().getIdpais();
+                    PaisDeptoMuni nombre = new PaisDeptoMuni();
+                    List<UbicacionesDAO> DeptoDep = nombre.listaDeptosDep(idpais);
+                    cbox_DeptoSede.getItems().addAll(DeptoDep);
+                    cbox_DeptoSede.setConverter(new ConverterStringUbicaciones());
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Seleccione el Pais");
+                    alert.setHeaderText("Alerta Pais");
+                    alert.setContentText("El pais esta vacio");
+                    alert.showAndWait();
+                }
             }
         }
     }
@@ -607,13 +643,13 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
                     cbox_CCiuNa.getItems().clear();
                     String depto = cbox_CDepNa.getValue().getNombredepto();
                     PaisDeptoMuni nombre = new PaisDeptoMuni();
-                    ObservableList<EmergenteEstadosPaisesDAO> Dato = nombre.nomDepto(depto);
-                    String idDepto = Dato.stream().map(EmergenteEstadosPaisesDAO::getIddepto).findFirst().orElse(null);
+                    ObservableList<UbicacionesDAO> Dato = nombre.nomDepto(depto);
+                    String idDepto = Dato.stream().map(UbicacionesDAO::getIddepto).findFirst().orElse(null);
                     System.out.println(idDepto);
                     PaisDeptoMuni listamunicipio = new PaisDeptoMuni();
-                    ObservableList<EmergenteEstadosPaisesDAO> listamunic = listamunicipio.listaMuniDep(idDepto);
+                    ObservableList<UbicacionesDAO> listamunic = listamunicipio.listaMuniDep(idDepto);
                     cbox_CCiuNa.getItems().addAll(listamunic);
-                    cbox_CCiuNa.setConverter(new ConverterStringMunic());
+                    cbox_CCiuNa.setConverter(new ConverterStringUbicaciones());
                 } else {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Seleccione el Pais");
@@ -628,13 +664,13 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
                     cbox_CCiuDr.getItems().clear();
                     String depto = cbox_CDepDr.getValue().getNombredepto();
                     PaisDeptoMuni nombre = new PaisDeptoMuni();
-                    ObservableList<EmergenteEstadosPaisesDAO> Dato = nombre.nomDepto(depto);
-                    String idDepto = Dato.stream().map(EmergenteEstadosPaisesDAO::getIddepto).findFirst().orElse(null);
+                    ObservableList<UbicacionesDAO> Dato = nombre.nomDepto(depto);
+                    String idDepto = Dato.stream().map(UbicacionesDAO::getIddepto).findFirst().orElse(null);
                     System.out.println(idDepto);
                     PaisDeptoMuni listamunicipio = new PaisDeptoMuni();
-                    ObservableList<EmergenteEstadosPaisesDAO> listamunic = listamunicipio.listaMuniDep(idDepto);
+                    ObservableList<UbicacionesDAO> listamunic = listamunicipio.listaMuniDep(idDepto);
                     cbox_CCiuDr.getItems().addAll(listamunic);
-                    cbox_CCiuDr.setConverter(new ConverterStringMunic());
+                    cbox_CCiuDr.setConverter(new ConverterStringUbicaciones());
                 } else {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Seleccione el Pais");
@@ -651,15 +687,38 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
                     System.out.println("Valor depto "+depto);
                     PaisDeptoMuni nombre = new PaisDeptoMuni();
                     System.out.println("Valor nombre "+nombre);
-                    ObservableList<EmergenteEstadosPaisesDAO> Dato = nombre.nomDepto(depto);
-                    String idDepto = Dato.stream().map(EmergenteEstadosPaisesDAO::getIddepto).findFirst().orElse(null);
+                    ObservableList<UbicacionesDAO> Dato = nombre.nomDepto(depto);
+                    String idDepto = Dato.stream().map(UbicacionesDAO::getIddepto).findFirst().orElse(null);
                     System.out.println("Valor iddepto: "+ idDepto);
                     PaisDeptoMuni listamunicipio = new PaisDeptoMuni();
-                    ObservableList<EmergenteEstadosPaisesDAO> listamunic = listamunicipio.listaMuniDep(idDepto);
+                    ObservableList<UbicacionesDAO> listamunic = listamunicipio.listaMuniDep(idDepto);
                     System.out.println("Vuelve con datos");
                     cbox_MunEmpr.getItems().addAll(listamunic);
-                    cbox_MunEmpr.setConverter(new ConverterStringMunic());
+                    cbox_MunEmpr.setConverter(new ConverterStringUbicaciones());
                 }else{
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Seleccione el Pais");
+                    alert.setHeaderText("Alerta Pais");
+                    alert.setContentText("El pais esta vacio");
+                    alert.showAndWait();
+                }
+            }else if (cboxCiudad.getId().equals("cbox_MuniSede")) {
+                if (cbox_DeptoSede.getValue() != null) {
+                    cbox_MuniSede.getItems().clear();
+                    cbox_BarSede.getItems().clear();
+                    String depto = cbox_DeptoSede.getValue().getNombredepto();
+                    System.out.println("Valor depto " + depto);
+                    PaisDeptoMuni nombre = new PaisDeptoMuni();
+                    System.out.println("Valor nombre " + nombre);
+                    ObservableList<UbicacionesDAO> Dato = nombre.nomDepto(depto);
+                    String idDepto = Dato.stream().map(UbicacionesDAO::getIddepto).findFirst().orElse(null);
+                    System.out.println("Valor iddepto: " + idDepto);
+                    PaisDeptoMuni listamunicipio = new PaisDeptoMuni();
+                    ObservableList<UbicacionesDAO> listamunic = listamunicipio.listaMuniDep(idDepto);
+                    System.out.println("Vuelve con datos");
+                    cbox_MuniSede.getItems().addAll(listamunic);
+                    cbox_MuniSede.setConverter(new ConverterStringUbicaciones());
+                } else {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Seleccione el Pais");
                     alert.setHeaderText("Alerta Pais");
@@ -683,11 +742,11 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
                     System.out.println("A buscar munic: " + iddepto);
                     System.out.println("A buscar munic: " + idmunic);
                     PaisDeptoMuni nombre = new PaisDeptoMuni();
-                    ObservableList<EmergenteEstadosPaisesDAO> Dato0 = nombre.nomDepto(iddepto);
+                    ObservableList<UbicacionesDAO> Dato0 = nombre.nomDepto(iddepto);
                     // Verificar si Dato0 no está vacía
                     String idDepto = null;
                     if (!Dato0.isEmpty()) {
-                        Optional<EmergenteEstadosPaisesDAO> firstDepto = Dato0.stream().findFirst();
+                        Optional<UbicacionesDAO> firstDepto = Dato0.stream().findFirst();
                         // Verificar si el objeto retornado no es nulo
                         if (firstDepto.isPresent()) {
                             idDepto = firstDepto.get().getIddepto();
@@ -698,11 +757,11 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
                     } else {
                         System.out.println("La lista Dato0 está vacía");
                     }
-                    ObservableList<EmergenteEstadosPaisesDAO> Dato1 = nombre.nomMuni(idmunic);
+                    ObservableList<UbicacionesDAO> Dato1 = nombre.nomMuni(idmunic);
                     // Verificar si Dato1 no está vacía
                     String idMunic = null;
                     if (!Dato1.isEmpty()) {
-                        Optional<EmergenteEstadosPaisesDAO> firstMunic = Dato1.stream().findFirst();
+                        Optional<UbicacionesDAO> firstMunic = Dato1.stream().findFirst();
                         // Verificar si el objeto retornado no es nulo
                         if (firstMunic.isPresent()) {
                             idMunic = firstMunic.get().getIdmunicipio();
@@ -713,7 +772,7 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
                     } else {
                         System.out.println("La lista Dato1 está vacía");
                     }
-                    ObservableList<EmergenteEstadosPaisesDAO> Dato2 = nombre.listaBarriosDep(idDepto, idMunic);
+                    ObservableList<UbicacionesDAO> Dato2 = nombre.listaBarriosDep(idDepto, idMunic);
                     cbox_CBarDr.getItems().addAll(Dato2);
                     cbox_CBarDr.setConverter(new ConverterStringBarrio());
                 }else{
@@ -732,11 +791,11 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
                     System.out.println("A buscar munic: " + iddepto);
                     System.out.println("A buscar munic: " + idmunic);
                     PaisDeptoMuni nombre = new PaisDeptoMuni();
-                    ObservableList<EmergenteEstadosPaisesDAO> Dato0 = nombre.nomDepto(iddepto);
+                    ObservableList<UbicacionesDAO> Dato0 = nombre.nomDepto(iddepto);
                     // Verificar si Dato0 no está vacía
                     String idDepto = null;
                     if (!Dato0.isEmpty()) {
-                        Optional<EmergenteEstadosPaisesDAO> firstDepto = Dato0.stream().findFirst();
+                        Optional<UbicacionesDAO> firstDepto = Dato0.stream().findFirst();
                         // Verificar si el objeto retornado no es nulo
                         if (firstDepto.isPresent()) {
                             idDepto = firstDepto.get().getIddepto();
@@ -747,11 +806,11 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
                     } else {
                         System.out.println("La lista Dato0 está vacía");
                     }
-                    ObservableList<EmergenteEstadosPaisesDAO> Dato1 = nombre.nomMuni(idmunic);
+                    ObservableList<UbicacionesDAO> Dato1 = nombre.nomMuni(idmunic);
                     // Verificar si Dato1 no está vacía
                     String idMunic = null;
                     if (!Dato1.isEmpty()) {
-                        Optional<EmergenteEstadosPaisesDAO> firstMunic = Dato1.stream().findFirst();
+                        Optional<UbicacionesDAO> firstMunic = Dato1.stream().findFirst();
                         // Verificar si el objeto retornado no es nulo
                         if (firstMunic.isPresent()) {
                             idMunic = firstMunic.get().getIdmunicipio();
@@ -762,11 +821,61 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
                     } else {
                         System.out.println("La lista Dato1 está vacía");
                     }
-                    ObservableList<EmergenteEstadosPaisesDAO> Dato2 = nombre.listaBarriosDep(idDepto, idMunic);
+                    ObservableList<UbicacionesDAO> Dato2 = nombre.listaBarriosDep(idDepto, idMunic);
                     System.out.println("Llego hasta aqui 1");
                     cbox_BarEmpr.getItems().addAll(Dato2);
                     cbox_BarEmpr.setConverter(new ConverterStringBarrio());
                 }else {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Seleccione el Pais");
+                    alert.setHeaderText("Alerta Pais");
+                    alert.setContentText("El Municipio para la esta vacio");
+                    alert.showAndWait();
+                }
+            }else if (cboxBarrio.getId().equals("cbox_BarSede")) {
+                if (cbox_MuniSede.getValue() != null) {
+                    cbox_BarSede.getItems().clear();
+                    String iddepto = String.valueOf(cbox_DeptoSede.getSelectionModel().getSelectedItem().getNombredepto());
+                    String idmunic = String.valueOf(cbox_MuniSede.getSelectionModel().getSelectedItem().getNombremunicipio());
+                    System.out.println("Clic en Cbox_BarEmpr");
+                    System.out.println("A buscar munic: " + iddepto);
+                    System.out.println("A buscar munic: " + idmunic);
+                    PaisDeptoMuni nombre = new PaisDeptoMuni();
+                    ObservableList<UbicacionesDAO> Dato0 = nombre.nomDepto(iddepto);
+                    // Verificar si Dato0 no está vacía
+                    String idDepto = null;
+                    if (!Dato0.isEmpty()) {
+                        Optional<UbicacionesDAO> firstDepto = Dato0.stream().findFirst();
+                        // Verificar si el objeto retornado no es nulo
+                        if (firstDepto.isPresent()) {
+                            idDepto = firstDepto.get().getIddepto();
+                            System.out.println("Convertido depto: " + idDepto);
+                        } else {
+                            System.out.println("No se encontró el id del departamento");
+                        }
+                    } else {
+                        System.out.println("La lista Dato0 está vacía");
+                    }
+                    ObservableList<UbicacionesDAO> Dato1 = nombre.nomMuni(idmunic);
+                    // Verificar si Dato1 no está vacía
+                    String idMunic = null;
+                    if (!Dato1.isEmpty()) {
+                        Optional<UbicacionesDAO> firstMunic = Dato1.stream().findFirst();
+                        // Verificar si el objeto retornado no es nulo
+                        if (firstMunic.isPresent()) {
+                            idMunic = firstMunic.get().getIdmunicipio();
+                            System.out.println("Convertido munic: " + idMunic);
+                        } else {
+                            System.out.println("No se encontró el id del municipio");
+                        }
+                    } else {
+                        System.out.println("La lista Dato1 está vacía");
+                    }
+                    ObservableList<UbicacionesDAO> Dato2 = nombre.listaBarriosDep(idDepto, idMunic);
+                    System.out.println("Llego hasta aqui 1");
+                    cbox_BarSede.getItems().addAll(Dato2);
+                    cbox_BarSede.setConverter(new ConverterStringBarrio());
+                } else {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Seleccione el Pais");
                     alert.setHeaderText("Alerta Pais");
@@ -814,10 +923,14 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
         txt_Cod_Emp.setText(cod);
     }
     @FXML void cargarEstados() {
+        cbox_EstEmpr.getItems().clear();
+        cbox_EstadoSede.getItems().clear();
         EstSexPob estados =  new  EstSexPob();
         Object list = estados.listaEstados();
-        cbox_EstEmpr.getItems().addAll((Collection<? extends EmergenteEstadosPaisesDAO>) list);
+        cbox_EstEmpr.getItems().addAll((Collection<? extends UbicacionesDAO>) list);
         cbox_EstEmpr.setConverter(new ConverterStringEstados());
+        cbox_EstadoSede.getItems().addAll((Collection<? extends UbicacionesDAO>) list);
+        cbox_EstadoSede.setConverter(new ConverterStringEstados());
     }
 
     public void cargarEmpresas() {
@@ -880,23 +993,14 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
         col_EstSede.setCellValueFactory(new PropertyValueFactory<>("estadosede"));
     }
 
-
-    public void eliminarSedes(ActionEvent event) throws SQLException {
-        String codSede = txt_CodSede.getText();
-        DatosTablasDAO eliminar = new DatosTablasDAO(codSede);
-        try {
-            eliminar.eliminarSede(codSede); // se eliminará el registro con codigosede escrito en txt_CodSede
-        } catch (SQLException e) {
-            System.out.println("Ha ocurrido un error al intentar eliminar el registro: " + e.getMessage());
-        }
-    }
-
     public void agregarSedes(ActionEvent event) {
 
     }
 
     @FXML void itemseleccionado(MouseEvent event){
-
+/**
+ * sirve para rellenar los campos segun el item que se seleccione de la tabla de la SEDE
+ */
         String codigosede = tbl_Sedes.getSelectionModel().getSelectedItem().getCodigoSede();
         //System.out.println(codigosede);
         RellenarTablas datossede = new RellenarTablas();
@@ -912,11 +1016,77 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
         txt_NombreSede.setText(datosSede.getNombresede());
         txt_NitSede.setText(datosSede.getNitsede());
         txt_DvSede.setText(datosSede.getDvsede());
+        cbox_PaisSede.setValue(null);
+        cbox_PaisSede.setPromptText(null);
+        cbox_PaisSede.setPromptText(datosSede.getNompais());
+        cbox_DeptoSede.setValue(null);
+        cbox_DeptoSede.setPromptText(null);
+        cbox_DeptoSede.setPromptText(datosSede.getNomdepto());
+        cbox_MuniSede.setValue(null);
+        cbox_MuniSede.setPromptText(null);
+        cbox_MuniSede.setPromptText(datosSede.getNommuni());
+
+
 //Seguir agregando los demas campos
 
 
 
     }
 
+
+    public void eliminarSedes(ActionEvent actionEvent) {
+    }
+
+    @FXML void moneda(MouseEvent event) {
+        cbox_MonSede.getItems().clear();
+        Moneda moneda = new Moneda();
+        Object mon = moneda.moneda();
+        System.out.println(mon);
+        cbox_MonSede.getItems().addAll((Collection<? extends Moneda>) mon);
+        System.out.println("Llegó hasta aquí");
+        cbox_MonSede.setConverter(new StringConverter<Moneda>() {
+            @Override
+            public String toString(Moneda moneda) {
+                return moneda == null ? null : moneda.getCodigomoneda();
+            }
+            @Override
+            public Moneda fromString(String s) {
+                return null;
+            }
+        });
+    }
+    @FXML void puc(MouseEvent event) {
+        cbox_PucSede.getItems().clear();
+        Puc cuentas = new Puc();
+        Object puc1 = cuentas.puc();
+        System.out.println(puc1);
+        cbox_PucSede.getItems().addAll((Collection<? extends Puc>) puc1);
+        System.out.println("Llegó hasta aquí PUC");
+        cbox_PucSede.setConverter(new StringConverter<Puc>() {
+            @Override
+            public String toString(Puc puc) {
+                return puc == null ? null : puc.getCodigopuc();
+            }
+            @Override
+            public Puc fromString(String s) {
+                return null;
+            }
+        });
+    }
+
+    @FXML void tipoDoc(MouseEvent event) {
+        cbox_DocRLSede.getItems().clear();
+        DocumentoIdentidad tipodoc = new DocumentoIdentidad();
+        Object doc = tipodoc.tipodocum();
+        System.out.println(doc);
+        cbox_DocRLSede.getItems().addAll((Collection<? extends DocumentoIdentidad>) doc);
+        System.out.println("Llegó hasta aquí TIPODOC");
+        cbox_DocRLSede.setConverter(new StringConverter<DocumentoIdentidad>() {
+            @Override public String toString(DocumentoIdentidad documentoIdentidad) {
+                return documentoIdentidad == null ? null : documentoIdentidad.getCodigoDoc();
+            }
+            @Override public DocumentoIdentidad fromString(String s) {return null;}
+        });
+    }
 
 }

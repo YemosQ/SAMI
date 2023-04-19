@@ -20,7 +20,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import modelo.Nomina.EmergenteEstadosPaisesDAO;
+import modelo.Nomina.UbicacionesDAO;
 import modelo.Nomina.EmpleadosDAO;
 import modelo.Nomina.PaisesDAO;
 import util.*;
@@ -84,13 +84,13 @@ public class EmpleadosC implements Initializable, MoverPanel.DraggedScene {
     @FXML private CheckBox Wp;
     @FXML private Button btn_Cerrar;
     @FXML private ComboBox<?> cbox_AnioNa;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_CBarDr;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_CCiuDr;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_CCiuNa;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_CDepDr;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_CDepNa;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_CPaiNa;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_CPobNa;
+    @FXML private ComboBox<UbicacionesDAO> cbox_CBarDr;
+    @FXML private ComboBox<UbicacionesDAO> cbox_CCiuDr;
+    @FXML private ComboBox<UbicacionesDAO> cbox_CCiuNa;
+    @FXML private ComboBox<UbicacionesDAO> cbox_CDepDr;
+    @FXML private ComboBox<UbicacionesDAO> cbox_CDepNa;
+    @FXML private ComboBox<UbicacionesDAO> cbox_CPaiNa;
+    @FXML private ComboBox<UbicacionesDAO> cbox_CPobNa;
     @FXML private ComboBox<?> cbox_CoArea;
     @FXML private ComboBox<?> cbox_CoCarg;
     @FXML private ComboBox<?> cbox_TpCost;
@@ -104,9 +104,9 @@ public class EmpleadosC implements Initializable, MoverPanel.DraggedScene {
     @FXML private ComboBox<?> cbox_CodRArl;
     @FXML private ComboBox<?> cbox_DiaNa;
     @FXML private ComboBox<?> cbox_MesNa;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_PaisDr;
+    @FXML private ComboBox<UbicacionesDAO> cbox_PaisDr;
     @FXML private ComboBox<?> cbox_Sede;
-    @FXML private ComboBox<EmergenteEstadosPaisesDAO> cbox_SexNa;
+    @FXML private ComboBox<UbicacionesDAO> cbox_SexNa;
     @FXML private ComboBox<?> cbox_TpCont;
     @FXML private ComboBox<?> cbox_TpCta;
     @FXML private ComboBox<?> cbox_TpSal;
@@ -405,24 +405,24 @@ public class EmpleadosC implements Initializable, MoverPanel.DraggedScene {
         //cbox_SexNa.getItems().removeAll(cbox_SexNa.getItems());
         EstSexPob sexolista =  new  EstSexPob();
         Object list = sexolista.listaSexo();
-        cbox_SexNa.getItems().addAll((Collection<? extends EmergenteEstadosPaisesDAO>) list);
+        cbox_SexNa.getItems().addAll((Collection<? extends UbicacionesDAO>) list);
         cbox_SexNa.setConverter(new ConverterStringSexo());
     }
     public void listaPobla() {
         cbox_CPobNa.getItems().removeAll(cbox_CPobNa.getItems());
         EstSexPob poblalista =  new  EstSexPob();
         Object list = poblalista.listaPobla();
-        cbox_CPobNa.getItems().addAll((Collection<? extends EmergenteEstadosPaisesDAO>) list);
+        cbox_CPobNa.getItems().addAll((Collection<? extends UbicacionesDAO>) list);
         cbox_CPobNa.setConverter(new ConverterStringSexo());
     }
     public void listaPais(){
         cbox_CPaiNa.getItems().removeAll(cbox_CPaiNa.getItems());
         PaisDeptoMuni paises = new PaisDeptoMuni();
         Object list = paises.listaPaises();
-        cbox_CPaiNa.getItems().addAll((EmergenteEstadosPaisesDAO) list);
-        cbox_CPaiNa.setConverter(new ConverterStringPaises());
-        cbox_PaisDr.getItems().addAll((EmergenteEstadosPaisesDAO) list);
-        cbox_PaisDr.setConverter(new ConverterStringPaises());
+        cbox_CPaiNa.getItems().addAll((UbicacionesDAO) list);
+        cbox_CPaiNa.setConverter(new ConverterStringUbicaciones());
+        cbox_PaisDr.getItems().addAll((UbicacionesDAO) list);
+        cbox_PaisDr.setConverter(new ConverterStringUbicaciones());
     }
     public void listaDeptosNac(){
         cbox_CDepNa.getItems().removeAll(cbox_CDepNa.getItems());
@@ -435,7 +435,7 @@ public class EmpleadosC implements Initializable, MoverPanel.DraggedScene {
         PaisDeptoMuni deptosDp = new PaisDeptoMuni();
         Object list = deptosDp.listaDeptosDep(idpais);
         //JOptionPane.showMessageDialog(null,"El valor de list es: "+list);
-        cbox_CDepNa.getItems().addAll((EmergenteEstadosPaisesDAO) list);
+        cbox_CDepNa.getItems().addAll((UbicacionesDAO) list);
         cbox_CDepNa.setConverter(new ConverterStringDepto());
         //JOptionPane.showMessageDialog(null,"No entró al If de listDeptos");
     }
@@ -450,7 +450,7 @@ public class EmpleadosC implements Initializable, MoverPanel.DraggedScene {
         PaisDeptoMuni deptosDp = new PaisDeptoMuni();
         Object list = deptosDp.listaDeptosDep(idpais);
         //JOptionPane.showMessageDialog(null,"El valor de list es: "+list);
-        cbox_CDepDr.getItems().addAll((EmergenteEstadosPaisesDAO) list);
+        cbox_CDepDr.getItems().addAll((UbicacionesDAO) list);
         cbox_CDepDr.setConverter(new ConverterStringDepto());
         //JOptionPane.showMessageDialog(null,"No entró al If de listDeptos");
     }
@@ -464,7 +464,7 @@ public class EmpleadosC implements Initializable, MoverPanel.DraggedScene {
         PaisDeptoMuni deptosDp = new PaisDeptoMuni();
         Object list = deptosDp.listaMuniDep(iddepto);
         //JOptionPane.showMessageDialog(null,"El valor de list es: "+list);
-        cbox_CCiuNa.getItems().addAll((EmergenteEstadosPaisesDAO) list);
+        cbox_CCiuNa.getItems().addAll((UbicacionesDAO) list);
         cbox_CCiuNa.setConverter(new ConverterStringMunic());
     }
     public void listaMunicDep(){
@@ -477,7 +477,7 @@ public class EmpleadosC implements Initializable, MoverPanel.DraggedScene {
         PaisDeptoMuni deptosDp = new PaisDeptoMuni();
         Object list = deptosDp.listaMuniDep(iddepto);
         //JOptionPane.showMessageDialog(null,"El valor de list es: "+list);
-        cbox_CCiuDr.getItems().addAll((EmergenteEstadosPaisesDAO) list);
+        cbox_CCiuDr.getItems().addAll((UbicacionesDAO) list);
         cbox_CCiuDr.setConverter(new ConverterStringMunic());
     }
     public void listaBarrio(){
@@ -494,7 +494,7 @@ public class EmpleadosC implements Initializable, MoverPanel.DraggedScene {
         PaisDeptoMuni deptosDp = new PaisDeptoMuni();
         Object list = deptosDp.listaBarriosDep(iddepto,idmunic);
         //JOptionPane.showMessageDialog(null,"El valor de list es: "+list);
-        cbox_CBarDr.getItems().addAll((EmergenteEstadosPaisesDAO) list);
+        cbox_CBarDr.getItems().addAll((UbicacionesDAO) list);
         cbox_CBarDr.setConverter(new ConverterStringBarrio());
     }
 

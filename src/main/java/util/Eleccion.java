@@ -3,7 +3,6 @@ package util;
 
 import controllers.PaisesCiudades.EmergentesEstadosPaisesC;
 import javafx.scene.layout.AnchorPane;
-import modelo.Nomina.EmergenteEstadosPaisesDAO;
 
 import javax.swing.*;
 

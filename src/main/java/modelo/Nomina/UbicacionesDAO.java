@@ -1,9 +1,6 @@
 package modelo.Nomina;
 
-import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-
-public class EmergenteEstadosPaisesDAO {
+public class UbicacionesDAO {
     private int codigoEstado;
     private String descripcionEstado;
     private String codigoSexo;
@@ -30,17 +27,17 @@ public class EmergenteEstadosPaisesDAO {
 
     private String consolidadoA;
 
-    public EmergenteEstadosPaisesDAO() {
+    public UbicacionesDAO() {
     }
 
-    public EmergenteEstadosPaisesDAO(int codigo, String descripcion) {
+    public UbicacionesDAO(int codigo, String descripcion) {
         this.codigoEstado=codigo;
         this.descripcionEstado=descripcion;
         this.descripcionPobla=descripcion;
         this.descripcionSexo=descripcion;
     }
 
-    public EmergenteEstadosPaisesDAO(String codigo, String descripcion, String estado) {
+    public UbicacionesDAO(String codigo, String descripcion, String estado) {
         this.codigoSexo=codigo;
         this.codigoPobla=codigo;
         this.descripcionEstado=descripcion;
@@ -50,7 +47,7 @@ public class EmergenteEstadosPaisesDAO {
     }
 
 
-    public EmergenteEstadosPaisesDAO(String descripcion) {
+    public UbicacionesDAO(String descripcion) {
         this.nombrebarrio=descripcion;
         this.nombredepto=descripcion;
         this.nombremunicipio=descripcion;
@@ -59,7 +56,7 @@ public class EmergenteEstadosPaisesDAO {
         this.idmunicipio=descripcion;
     }
 
-    public EmergenteEstadosPaisesDAO(String codigo, String descripcion, String codDepto, String estado) {
+    public UbicacionesDAO(String codigo, String descripcion, String codDepto, String estado) {
         this.idmunicipio=codigo;
         this.iddepto=codigo;
         this.iddeptoas=codDepto;
@@ -72,7 +69,7 @@ public class EmergenteEstadosPaisesDAO {
         this.estado=estado;
     }
 
-    public EmergenteEstadosPaisesDAO(String codigo, String descripcion, String codDepto, String codMun, String estado) {
+    public UbicacionesDAO(String codigo, String descripcion, String codDepto, String codMun, String estado) {
         this.idpais=codigo;
         this.nombrebarrio=descripcion;
         this.iddeptoas=codDepto;
@@ -84,7 +81,7 @@ public class EmergenteEstadosPaisesDAO {
         this.idbarrio=codigo;
     }
 
-    public EmergenteEstadosPaisesDAO(String codigo, String descripcion, int codigoestado, String estado) {
+    public UbicacionesDAO(String codigo, String descripcion, int codigoestado, String estado) {
         this.idpais=codigo;
         this.nombrepais=descripcion;
         this.codigoEstado=codigoestado;

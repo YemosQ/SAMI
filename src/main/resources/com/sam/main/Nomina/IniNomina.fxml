@@ -830,19 +830,19 @@
                                                                                         <Font name="System Bold" size="12.0" />
                                                                                     </font>
                                                                                 </Label>
-                                                                                <ComboBox fx:id="cbox_PaisSede" prefWidth="150.0" styleClass="combobox" />
+                                                                                <ComboBox fx:id="cbox_PaisSede" onMouseClicked="#listaPais" prefWidth="150.0" styleClass="combobox" />
                                                                                 <Label styleClass="labelgeneral" text="Departamento" textFill="WHITE">
                                                                                     <font>
                                                                                         <Font name="System Bold" size="12.0" />
                                                                                     </font>
                                                                                 </Label>
-                                                                                <ComboBox fx:id="cbox_DeptoSede" prefWidth="150.0" styleClass="combobox" />
+                                                                                <ComboBox fx:id="cbox_DeptoSede" onMouseClicked="#CargarDepto" prefWidth="150.0" styleClass="combobox" />
                                                                                 <Label styleClass="labelgeneral" text="Municipio" textFill="WHITE">
                                                                                     <font>
                                                                                         <Font name="System Bold" size="12.0" />
                                                                                     </font>
                                                                                 </Label>
-                                                                                <ComboBox fx:id="txt_MuniSede" prefWidth="150.0" styleClass="combobox" />
+                                                                                <ComboBox fx:id="cbox_MuniSede" onMouseClicked="#CargarCiudad" prefWidth="150.0" styleClass="combobox" />
                                                                             </children>
                                                                         </HBox>
                                                                         <HBox alignment="CENTER_LEFT" spacing="3.0">
@@ -852,7 +852,7 @@
                                                                                         <Font name="System Bold" size="12.0" />
                                                                                     </font>
                                                                                 </Label>
-                                                                                <ChoiceBox fx:id="txt_BarrioSede" prefHeight="25.0" prefWidth="120.0" styleClass="combobox" />
+                                                            <ComboBox fx:id="cbox_BarSede" onMouseClicked="#CargarBarrio" prefHeight="25.0" prefWidth="138.0" styleClass="combobox" />
                                                                                 <Label styleClass="labelgeneral" text="Dirección" textFill="WHITE">
                                                                                     <font>
                                                                                         <Font name="System Bold" size="12.0" />
@@ -906,13 +906,13 @@
                                                                                         <Font name="System Bold" size="12.0" />
                                                                                     </font>
                                                                                 </Label>
-                                                                                <ChoiceBox fx:id="cbox_MonSede" prefHeight="25.0" prefWidth="128.0" styleClass="combobox" />
+                                                            <ComboBox fx:id="cbox_MonSede" onMouseClicked="#moneda" prefHeight="26.0" prefWidth="65.0" styleClass="combobox" />
                                                                                 <Label styleClass="labelgeneral" text="Puc" textFill="WHITE">
                                                                                     <font>
                                                                                         <Font name="System Bold" size="12.0" />
                                                                                     </font>
                                                                                 </Label>
-                                                                                <ChoiceBox fx:id="cbox_PucSede" prefHeight="25.0" prefWidth="126.0" styleClass="combobox" />
+                                                            <ComboBox fx:id="cbox_PucSede" onMouseClicked="#puc" prefHeight="26.0" prefWidth="79.0" styleClass="combobox" />
                                                                                 <Label styleClass="labelgeneral" text="Cant Dec" textFill="WHITE">
                                                                                     <font>
                                                                                         <Font name="System Bold" size="12.0" />
@@ -933,13 +933,13 @@
                                                                                         <Font name="System Bold" size="12.0" />
                                                                                     </font>
                                                                                 </Label>
-                                                                                <ComboBox fx:id="cbox_DocRLSede" prefHeight="26.0" prefWidth="137.0" styleClass="combobox" />
+                                                                                <ComboBox fx:id="cbox_DocRLSede" onMouseClicked="#tipoDoc" prefHeight="26.0" prefWidth="47.0" styleClass="combobox" />
                                                                                 <Label styleClass="labelgeneral" text="Nombre Rep Legal" textFill="WHITE">
                                                                                     <font>
                                                                                         <Font name="System Bold" size="12.0" />
                                                                                     </font>
                                                                                 </Label>
-                                                                                <TextField fx:id="txt_NombreRLSede" prefHeight="25.0" prefWidth="287.0" />
+                                                                                <TextField fx:id="txt_NombreRLSede" prefHeight="25.0" prefWidth="379.0" />
                                                                             </children>
                                                                         </HBox>
                                                                         <HBox alignment="CENTER_LEFT" spacing="3.0">
@@ -987,7 +987,7 @@
                                                                                         <Insets right="3.0" />
                                                                                     </HBox.margin>
                                                                                 </Label>
-                                                                                <TextField fx:id="txt_UrlLogoSede" prefHeight="25.0" prefWidth="235.0" />
+                                                                                <TextField fx:id="txt_UrlLogoSede" prefHeight="25.0" prefWidth="224.0" />
                                                                                 <Button fx:id="btn_UrlLg" alignment="BOTTOM_CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" styleClass="fondotransparente">
                                                                                     <graphic>
                                                                                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
@@ -1005,7 +1005,7 @@
                                                                                         <Insets right="3.0" />
                                                                                     </HBox.margin>
                                                                                 </Label>
-                                                                                <TextField fx:id="txt_UrlMAguaSede" prefHeight="25.0" prefWidth="240.0" />
+                                                                                <TextField fx:id="txt_UrlMAguaSede" prefHeight="25.0" prefWidth="204.0" />
                                                                                 <Button fx:id="btn_UrlMA" alignment="BOTTOM_CENTER" graphicTextGap="0.0" mnemonicParsing="false" styleClass="fondotransparente">
                                                                                     <graphic>
                                                                                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
@@ -1024,7 +1024,7 @@
                                                                                         <Font name="System Bold" size="12.0" />
                                                                                     </font>
                                                                                 </Label>
-                                                                                <ChoiceBox fx:id="cbox_EstadoSede" prefWidth="150.0" styleClass="combobox" />
+                                                            <ComboBox fx:id="cbox_EstadoSede" onMouseClicked="#cargarEstados" prefHeight="26.0" prefWidth="117.0" styleClass="combobox" />
                                                                             </children>
                                                                         </HBox>
                                                                         <VBox prefHeight="263.0" prefWidth="704.0" spacing="5.0">
@@ -1113,7 +1113,7 @@
                                                                                         </Label>
                                                                                     </children>
                                                                                 </HBox>
-                                                                                <HBox spacing="5.0">
+                                                                                <HBox alignment="CENTER" spacing="5.0">
                                                                                     <children>
                                                                                         <CheckBox fx:id="cb_LunSede" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" styleClass="labelgeneral" text="Lunes" textFill="WHITE">
                                                                                             <font>
