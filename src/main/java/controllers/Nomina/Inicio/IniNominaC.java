@@ -56,9 +56,7 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
  * En las siguientes lineas se establecen todas las variables
 */
 
-
-
-    //
+    //TEXTFIELD
     @FXML private TextField ApeDos;
     @FXML private TextField ApeUno;
     @FXML private TextField CelDr;
@@ -117,17 +115,58 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     @FXML private TextField txt_TpPerso;
     @FXML private TextField txt_TpRegFis;
     @FXML private TextField txt_NombreEmpresa;
-    @FXML private TextField txt_NitEmpresa;
-    @FXML private TextField txt_DvEmpresa;
-//CHECKBOX
-    @FXML private TextField txt_TpRespFis;//TEXTFIELD
+    @FXML private TextField txt_UrlLogoSede;
+    @FXML private TextField txt_UrlMAguaSede;
+    @FXML private TextField txt_UrlFirmaRLSede;
+    @FXML private TextField txt_BusqSede;
+    @FXML private TextField txt_CantSede;
+    @FXML private TextField txt_CelDr;
+    @FXML private TextField txt_CelSede;
+    @FXML private TextField txt_CoCenC;
+    @FXML private TextField txt_CodConstSede;
     @FXML private TextField txt_CodSede;
-    @FXML private TextField txt_NitSede;
-    @FXML private TextField txt_NombreSede;
+    @FXML private TextField txt_DTpVlr;
+    @FXML private TextField txt_DescSegSede;
+    @FXML private TextField txt_DirDr;
+    @FXML private TextField txt_DirSede;
+    @FXML private TextField txt_Discapacidad;
+    @FXML private TextField txt_DvEmpresa;
     @FXML private TextField txt_DvSede;
+    @FXML private TextField txt_Email;
+    @FXML private TextField txt_EmailSede;
+    @FXML private TextField txt_FinDescaSede;
+    @FXML private TextField txt_HoraEgrSede;
+    @FXML private TextField txt_HoraIngSede;
+    @FXML private TextField txt_HrsLabDEnfSede;
+    @FXML private TextField txt_HrsLabMEnfSede;
+    @FXML private TextField txt_HrsLabSede;
+    @FXML private TextField txt_IniDescaSede;
+    @FXML private TextField txt_NitEmpresa;
+    @FXML private TextField txt_NitSede;
+    @FXML private TextField txt_NomAre;
+    @FXML private TextField txt_NomBan;
+    @FXML private TextField txt_NomCCost;
+    @FXML private TextField txt_NomCargo;
+    @FXML private TextField txt_NomTur;
+    @FXML private TextField txt_NombreRLSede;
+    @FXML private TextField txt_NombreSede;
+    @FXML private TextField txt_NumCta;
+    @FXML private TextField txt_Sueldo;
+    @FXML private TextField txt_TDurC;
+    @FXML private TextField txt_TelDr;
+    @FXML private TextField txt_TelSede;
+    @FXML private TextField txt_TpSocSede;
+    @FXML private TextField txt_TurnSegSede;
+    @FXML private TextField txt_UbSede;
+    @FXML private TextField txt_WpSede;
+    @FXML private TextField txt_TpRespFis;
+    //TEXTFIELD
 
     @FXML private CheckBox Hg;
     @FXML private CheckBox Wp;
+    //CHECKBOX
+
+    @FXML private Button btn_FirmaRLSede;
     @FXML private Button btn_ActualizarCc;
     @FXML private Button btn_ActualizarClase;
     @FXML private Button btn_ActualizarSClase;
@@ -138,9 +177,11 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     @FXML private Button btn_AgregarTpCosto;
     @FXML private Button btn_Cerrar;
     @FXML private Button btn_minimizar;
+    @FXML private Button btn_UrlLg;
+    @FXML private Button btn_UrlMA;
     @FXML private Button btn_EliminarCc;
     @FXML private Button btn_EliminarClase;
-    @FXML private Button btn_EliminarSClase;
+    @FXML private Button btn_EliminarSClase; //BOTONES
     @FXML private Button btn_EliminarTpCosto;
     @FXML private Button btn_Logout;
     @FXML private Button btn_paises;//BOTONES
@@ -241,6 +282,14 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
     @FXML private TableColumn<?, ?> col_NomClase;
     @FXML private TableColumn<?, ?> col_NomSClase;
      //COLUMNAS TABLEVIEW
+
+
+//Imagenes
+    @FXML private ImageView img_FirmaSede;
+    @FXML private ImageView img_LogoSede;
+    @FXML private ImageView img_MarcaASede;
+
+    //Imgagenes
     @FXML private TableColumn<?, ?> col_NomTpCosto;
     @FXML private TableColumn<?, ?> col_SClaseAs;
     @FXML private TableColumn<?, ?> col_anioCc;
@@ -963,6 +1012,7 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
             }
         });
     }
+
     public void cargarSedes() {
         configurarColumnasTablas();
         RellenarTablas sede = new RellenarTablas();
@@ -980,17 +1030,19 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
         /**
          * El valor dentro de PropertyValueFactory es el correspondiente a la variable del constructor DatosTablasDAO
          * configuracion de la tabla de las empresas
+         * Los Datos en verde como nitEmpresa, deben ser exactamente a los que corresponde en la hoja DatosTablasDAO.java
+         * Deben ser exactamente igual para que al realizar la busqueda en la tabla de datos, estos se guarden en esos valores
          */
-        col_NitEmpresa.setCellValueFactory(new PropertyValueFactory<>("nitempresa"));
-        col_NombreEmpresa.setCellValueFactory(new PropertyValueFactory<>("nombreempresa"));
-        col_EstEmpresa.setCellValueFactory(new PropertyValueFactory<>("estadoempresa"));
+        col_NitEmpresa.setCellValueFactory(new PropertyValueFactory<>("nitEmpresa"));
+        col_NombreEmpresa.setCellValueFactory(new PropertyValueFactory<>("nombreEmpresa"));
+        col_EstEmpresa.setCellValueFactory(new PropertyValueFactory<>("estadoEmpresa"));
         /**
          *Configuración de las columnas de las Sedes
          */
-        col_CodSede.setCellValueFactory(new PropertyValueFactory<>("codigosede"));
-        col_NomEmpSede.setCellValueFactory(new PropertyValueFactory<>("nombreempresa"));
-        col_NomSede.setCellValueFactory(new PropertyValueFactory<>("nombresede"));
-        col_EstSede.setCellValueFactory(new PropertyValueFactory<>("estadosede"));
+        col_CodSede.setCellValueFactory(new PropertyValueFactory<>("codSede"));
+        col_NomEmpSede.setCellValueFactory(new PropertyValueFactory<>("nombreEmpresa"));
+        col_NomSede.setCellValueFactory(new PropertyValueFactory<>("nombreSede"));
+        col_EstSede.setCellValueFactory(new PropertyValueFactory<>("estadoSede"));
     }
 
     public void agregarSedes(ActionEvent event) {
@@ -1001,30 +1053,48 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
 /**
  * sirve para rellenar los campos segun el item que se seleccione de la tabla de la SEDE
  */
-        String codigosede = tbl_Sedes.getSelectionModel().getSelectedItem().getCodigoSede();
+        String codigosede = tbl_Sedes.getSelectionModel().getSelectedItem().getCodSede();
         //System.out.println(codigosede);
         RellenarTablas datossede = new RellenarTablas();
         List<DatosTablasDAO> datos = datossede.datosedes(codigosede);
         DatosTablasDAO datosSede = datos.get(0);
         cbox_CodEmp.setValue(null);
         cbox_CodEmp.setPromptText(null);
-        cbox_CodEmp.setPromptText(datosSede.getCodigoempresa());
-        txt_NombreEmpresa.setText(datosSede.getEmpresasede());
-        txt_NitEmpresa.setText(datosSede.getNitempresa());
-        txt_DvEmpresa.setText(datosSede.getDvempresa());
-        txt_CodSede.setText(datosSede.getCodigosede());
-        txt_NombreSede.setText(datosSede.getNombresede());
-        txt_NitSede.setText(datosSede.getNitsede());
-        txt_DvSede.setText(datosSede.getDvsede());
+        cbox_CodEmp.setPromptText(datosSede.getCodEmpresa());
+
+        cbox_MonSede.setValue(null);
+        cbox_MonSede.setPromptText(null);
+        cbox_MonSede.setPromptText(datosSede.getCodEmpresa());
+
+        txt_NombreEmpresa.setText(datosSede.getNombreEmpresa());
+        txt_NitEmpresa.setText(datosSede.getNitEmpresa());
+        txt_DvEmpresa.setText(datosSede.getDvEmpresa());
+        txt_CodSede.setText(datosSede.getCodSede());
+        txt_NombreSede.setText(datosSede.getNombreSede());
+        txt_NitSede.setText(datosSede.getNitSede());
+        txt_DvSede.setText(datosSede.getDvSede());
+
         cbox_PaisSede.setValue(null);
         cbox_PaisSede.setPromptText(null);
-        cbox_PaisSede.setPromptText(datosSede.getNompais());
+        cbox_PaisSede.setPromptText(datosSede.getNomPais());
         cbox_DeptoSede.setValue(null);
         cbox_DeptoSede.setPromptText(null);
-        cbox_DeptoSede.setPromptText(datosSede.getNomdepto());
+        cbox_DeptoSede.setPromptText(datosSede.getNomDepto());
         cbox_MuniSede.setValue(null);
         cbox_MuniSede.setPromptText(null);
-        cbox_MuniSede.setPromptText(datosSede.getNommuni());
+        cbox_MuniSede.setPromptText(datosSede.getNomMuni());
+        txt_DirSede.setText(datosSede.getDirec());
+        txt_UbSede.setText(datosSede.getUbSede());
+        txt_TelSede.setText(datosSede.getTelef());
+        txt_CelSede.setText(datosSede.getCelCont());
+        txt_CelSede.setText(datosSede.getCelWApp());
+        txt_CelSede.setText(datosSede.getEmail());
+        txt_CelSede.setText(datosSede.getCodMon());
+        txt_CelSede.setText(datosSede.getCantDec());
+
+
+
+
 
 
 //Seguir agregando los demas campos
@@ -1086,6 +1156,21 @@ public class IniNominaC implements Initializable, MoverPanel.DraggedScene {
                 return documentoIdentidad == null ? null : documentoIdentidad.getCodigoDoc();
             }
             @Override public DocumentoIdentidad fromString(String s) {return null;}
+        });
+    }
+
+    @FXML void logos(){
+        btn_UrlLg.setOnAction(e -> {
+            String urlImagen = null;
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Seleccionar imagen del logo");
+            File selectedFile = fileChooser.showOpenDialog(btn_UrlLg.getScene().getWindow());
+            if (selectedFile != null) {
+                Image image = new Image(selectedFile.toURI().toString());
+                img_LogoSede.setImage(image);
+                urlImagen = selectedFile.toURI().toString();
+                txt_UrlLogoSede.setText(urlImagen);
+            }
         });
     }
 

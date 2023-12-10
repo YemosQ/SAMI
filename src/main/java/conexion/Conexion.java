@@ -4,6 +4,7 @@ import javafx.scene.control.Alert;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 
 public class Conexion {
@@ -14,6 +15,7 @@ public class Conexion {
     private static final String nombreBD="sami";
     private static final String url="jdbc:mysql://"+servidor+":"+puerto+"/"+nombreBD+"?serverTimezone=UTC";
     private static final String driver="com.mysql.cj.jdbc.Driver";
+
 
 
     static {
@@ -31,9 +33,10 @@ public class Conexion {
         try {
             Connection conexion = DriverManager.getConnection(url, user, pass);
             System.out.println("Conexión correcta");
+            //Statement statement = conectar().createStatement();
             return conexion;
         } catch (SQLException ex) {
-            System.out.println("Error de conexión");
+            System.out.println("Error de conexión en la Clase Conexion");
         }
         return null;
     }

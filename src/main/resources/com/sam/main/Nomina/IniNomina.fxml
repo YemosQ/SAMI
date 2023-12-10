@@ -374,7 +374,7 @@
                                         </VBox>
                                     </children>
                                 </AnchorPane>
-                                <AnchorPane fx:id="panel_Parametro_Empresa" layoutX="21.0" layoutY="31.0" prefHeight="660.0" prefWidth="1050.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <AnchorPane fx:id="panel_Parametro_Empresa" layoutX="21.0" layoutY="31.0" prefHeight="660.0" prefWidth="1050.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                     <children>
                                         <HBox spacing="10.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                                             <children>
@@ -748,7 +748,7 @@
                                         </HBox>
                                     </children>
                                 </AnchorPane>
-                                <AnchorPane fx:id="panel_Parametro_Sede" layoutX="45.0" layoutY="123.0" prefHeight="660.0" prefWidth="1050.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <AnchorPane fx:id="panel_Parametro_Sede" layoutX="45.0" layoutY="123.0" prefHeight="660.0" prefWidth="1050.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                     <children>
                                         <HBox prefHeight="660.0" prefWidth="1186.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <children>
@@ -847,12 +847,6 @@
                                                                         </HBox>
                                                                         <HBox alignment="CENTER_LEFT" spacing="3.0">
                                                                             <children>
-                                                                                <Label styleClass="labelgeneral" text="Barrio" textFill="WHITE">
-                                                                                    <font>
-                                                                                        <Font name="System Bold" size="12.0" />
-                                                                                    </font>
-                                                                                </Label>
-                                                            <ComboBox fx:id="cbox_BarSede" onMouseClicked="#CargarBarrio" prefHeight="25.0" prefWidth="138.0" styleClass="combobox" />
                                                                                 <Label styleClass="labelgeneral" text="Dirección" textFill="WHITE">
                                                                                     <font>
                                                                                         <Font name="System Bold" size="12.0" />
@@ -906,7 +900,7 @@
                                                                                         <Font name="System Bold" size="12.0" />
                                                                                     </font>
                                                                                 </Label>
-                                                            <ComboBox fx:id="cbox_MonSede" onMouseClicked="#moneda" prefHeight="26.0" prefWidth="65.0" styleClass="combobox" />
+                                                            <ComboBox fx:id="cbox_MonSede" onMouseClicked="#moneda" prefHeight="26.0" prefWidth="76.0" styleClass="combobox" />
                                                                                 <Label styleClass="labelgeneral" text="Puc" textFill="WHITE">
                                                                                     <font>
                                                                                         <Font name="System Bold" size="12.0" />
@@ -933,13 +927,13 @@
                                                                                         <Font name="System Bold" size="12.0" />
                                                                                     </font>
                                                                                 </Label>
-                                                                                <ComboBox fx:id="cbox_DocRLSede" onMouseClicked="#tipoDoc" prefHeight="26.0" prefWidth="47.0" styleClass="combobox" />
+                                                                                <ComboBox fx:id="cbox_DocRLSede" onMouseClicked="#tipoDoc" prefHeight="26.0" prefWidth="65.0" styleClass="combobox" />
                                                                                 <Label styleClass="labelgeneral" text="Nombre Rep Legal" textFill="WHITE">
                                                                                     <font>
                                                                                         <Font name="System Bold" size="12.0" />
                                                                                     </font>
                                                                                 </Label>
-                                                                                <TextField fx:id="txt_NombreRLSede" prefHeight="25.0" prefWidth="379.0" />
+                                                                                <TextField fx:id="txt_NombreRLSede" prefHeight="25.0" prefWidth="360.0" />
                                                                             </children>
                                                                         </HBox>
                                                                         <HBox alignment="CENTER_LEFT" spacing="3.0">
@@ -949,8 +943,8 @@
                                                                                         <Font name="System Bold" size="12.0" />
                                                                                     </font>
                                                                                 </Label>
-                                                                                <TextField fx:id="txt_UrlFirmaRLSede" prefHeight="25.0" prefWidth="289.0" />
-                                                                                <Button alignment="BOTTOM_CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" styleClass="fondotransparente">
+                                                                                <TextField fx:id="txt_UrlFirmaRLSede" prefHeight="25.0" prefWidth="389.0" />
+                                                                                <Button fx:id="btn_FirmaRLSede" alignment="BOTTOM_CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" styleClass="fondotransparente">
                                                                                     <graphic>
                                                                                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                                                                             <image>
@@ -974,7 +968,7 @@
                                                                                         <Font name="System Bold" size="12.0" />
                                                                                     </font>
                                                                                 </Label>
-                                                                                <TextField fx:id="txt_TpSocSede" />
+                                                                                <TextField fx:id="txt_TpSocSede" prefHeight="25.0" prefWidth="192.0" />
                                                                             </children>
                                                                         </HBox>
                                                                         <HBox alignment="CENTER_LEFT">
@@ -988,7 +982,7 @@
                                                                                     </HBox.margin>
                                                                                 </Label>
                                                                                 <TextField fx:id="txt_UrlLogoSede" prefHeight="25.0" prefWidth="224.0" />
-                                                                                <Button fx:id="btn_UrlLg" alignment="BOTTOM_CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" styleClass="fondotransparente">
+                                                                                <Button fx:id="btn_UrlLg" alignment="BOTTOM_CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#logos" styleClass="fondotransparente">
                                                                                     <graphic>
                                                                                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                                                                             <image>
@@ -1154,9 +1148,9 @@
                                                                                 </HBox>
                                                                                 <HBox alignment="CENTER" prefHeight="129.0" prefWidth="679.0" spacing="20.0">
                                                                                     <children>
-                                                                                        <Pane fx:id="img_FirmaSede" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0">
+                                                                                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0">
                                                                                             <children>
-                                                                                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                                                                                                <ImageView fx:id="img_FirmaSede" fitHeight="131.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true" />
                                                                                             </children>
                                                                                             <styleClass>
                                                                                                 <String fx:value="estiloformas" />
@@ -1165,7 +1159,7 @@
                                                                                         </Pane>
                                                                                         <Pane fx:id="img_McLgSede" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0">
                                                                                             <children>
-                                                                                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                                                                                                <ImageView fx:id="img_LogoSede" fitHeight="130.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true" />
                                                                                             </children>
                                                                                             <styleClass>
                                                                                                 <String fx:value="estiloformas" />
@@ -1174,7 +1168,7 @@
                                                                                         </Pane>
                                                                                         <Pane fx:id="img_McAgSede" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0">
                                                                                             <children>
-                                                                                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                                                                                                <ImageView fx:id="img_MarcaASede" fitHeight="131.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true" />
                                                                                             </children>
                                                                                             <styleClass>
                                                                                                 <String fx:value="estiloformas" />

@@ -4,7 +4,6 @@ module com.sam.sami {
     requires java.sql;
     requires javafx.base;
     requires java.desktop;
-    requires commons.dbcp2;
 
 
     opens com.sam.main to javafx.fxml;

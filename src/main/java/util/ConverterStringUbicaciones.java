@@ -22,7 +22,7 @@ public class ConverterStringUbicaciones<T> extends StringConverter<T> {
         if (objeto instanceof UbicacionesDAO) {
             return ((UbicacionesDAO) objeto).getNombrepais();
         } else if (objeto instanceof DatosTablasDAO) {
-            return ((DatosTablasDAO) objeto).getNompais();
+            return ((DatosTablasDAO) objeto).getNomPais();
         } else {
             throw new IllegalArgumentException("Tipo de objeto no válido");
         }
